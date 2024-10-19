@@ -90,6 +90,9 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Enable Bluetooth GUI (blueman).
+  services.blueman.enable = true;
+
   # Enable sound with pipewire.
 #  hardware.pulseaudio.enable = false;
 #  security.rtkit.enable = true;
@@ -144,10 +147,14 @@
     swww
     gnome.seahorse
     vscode
+    killall
+    font-awesome_5
+    google-chrome
   ];
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" "RobotoMono" ]; })
+   # (nerdfonts.override { fonts = [ "JetBrainsMono" "RobotoMono" ]; })
+    nerdfonts
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

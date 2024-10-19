@@ -4,4 +4,7 @@
 nm-applet --indicator &
 
 # Bar
-waybar &
+waybar -c ~/.config/waybar/config &
+
+# Focus on monitor's workspace
+# hyprctl dispatch workspace 1 
