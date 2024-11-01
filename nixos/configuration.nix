@@ -144,7 +144,7 @@
     nconfig = "code /etc/nixos/configuration.nix";
   };
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
     networkmanagerapplet
     kitty
@@ -164,6 +164,7 @@
     openvpn
     gnome.nautilus
     ranger
+    aria2
   ];
 
   fonts.packages = with pkgs; [
@@ -173,14 +174,14 @@
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+   programs.mtr.enable = true;
+   programs.gnupg.agent = {
+     enable = true;
+     enableSSHSupport = true;
+   };
 
   # List services that you want to enable
-  programs.ssh.startAgent = true;
+  #programs.ssh.startAgent = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
