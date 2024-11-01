@@ -94,25 +94,30 @@
   services.blueman.enable = true;
 
   # Enable sound with pipewire.
-#  hardware.pulseaudio.enable = false;
-#  security.rtkit.enable = true;
-#  services.pipewire = {
- #   enable = true;
-  #  alsa.enable = true;
-   # alsa.support32Bit = true;
+  #hardware.pulseaudio.enable = false;
+  #security.rtkit.enable = true;
+  #services.pipewire = {
+   # enable = false;
+    #alsa.enable = true;
+    #alsa.support32Bit = true;
     #pulse.enable = true;
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
-    #media-session.enable = true;
- # };
+   #  media-session.enable = true;
+  #};
 
   # Bluetooth
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   hardware.pulseaudio.enable = true;
+  hardware.bluetooth.settings = {
+    General = {
+      Enable = "Source,Sink,Media,Socket";
+    };
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -128,13 +133,16 @@
   };
 
   # Install firefox.
-  programs.firefox.enable = true;
+  programs.firefox.enable = false;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  environment.shellAliases = {
+    nconfig = "code /etc/nixos/configuration.nix";
+  };
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
@@ -149,7 +157,13 @@
     vscode
     killall
     font-awesome_5
-    google-chrome
+    brave
+    pavucontrol
+    egl-wayland
+    nodejs
+    openvpn
+    gnome.nautilus
+    ranger
   ];
 
   fonts.packages = with pkgs; [
@@ -165,10 +179,11 @@
   #   enableSSHSupport = true;
   # };
 
-  # List services that you want to enable:
+  # List services that you want to enable
+  programs.ssh.startAgent = true;
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

@@ -2,13 +2,16 @@
 
 {
 
-
+boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
 
 # Enable OpenGL
-  hardware.opengl.enable = true;
+  hardware.opengl = {
+    enable = true;
+    extraPackages = with pkgs; [ nvidia-vaapi-driver ]; 
+  };
 
   # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = ["nvidia-dkms"];
 
   hardware.nvidia = {
 
@@ -16,7 +19,7 @@
     modesetting.enable = true;
 
     # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
-    powerManagement.enable = false;
+    powerManagement.enable = true;
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
     powerManagement.finegrained = false;
@@ -38,11 +41,11 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
 
     prime = { 
-		# Make sure to use the correct Bus ID values for your system!
-		  intelBusId = "PCI:00:02.0";
-		  nvidiaBusId = "PCI:01:00.0";
+      sync.enable = true;
+		# Make sure to use the correct Bus ID values for your system
+		  intelBusId = "PCI:0:2:0";
+		  nvidiaBusId = "PCI:1:0:0";
 	};
-
   };
 
 }
