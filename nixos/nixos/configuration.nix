@@ -185,13 +185,11 @@
     obsidian
     speedtest-cli
     inxi
-    # nvidia-vaapi-driver
-    # libva
     libva-utils
-    # vdpauinfo
     ffmpeg
-    # libvdpau-va-gl
     libsecret
+    gnome.gnome-keyring
+    gnome.seahorse
     stow
   ];
 
