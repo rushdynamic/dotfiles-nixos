@@ -73,6 +73,7 @@
     XDG_SESSION_TYPE = "wayland";
     LIBVA_DRIVER_NAME = "nvidia";
     VDPAU_DRIVER = "nvidia";
+    SSH_ASKPASS = "${pkgs.lxqt.lxqt-openssh-askpass}/bin/lxqt-openssh-askpass";
   };
 
   xdg.portal.enable = true;
@@ -149,6 +150,7 @@
     gs = "git status";
     gfo = "git fetch origin";
     ga = "git add";
+    gd = "git diff";
     dots = "cd /home/rushdynamic/Scripts/dotfiles-nixos";
   };
   
@@ -162,7 +164,6 @@
     }))
     rofi-wayland
     swww
-    gnome.seahorse
     vscode
     killall
     font-awesome_5
@@ -176,7 +177,7 @@
     aria2
     git
     git-credential-manager
-    gnome.gnome-keyring
+    lxqt.lxqt-openssh-askpass
     obs-studio
     vlc
     spotify
@@ -218,7 +219,10 @@
    };
 
   # List services that you want to enable
-  #programs.ssh.startAgent = true;
+  programs.ssh = {
+    enableAskPassword = true;
+    askPassword = "${pkgs.lxqt.lxqt-openssh-askpass}/bin/lxqt-openssh-askpass";
+  };
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
