@@ -152,6 +152,8 @@
     ga = "git add";
     gd = "git diff";
     dots = "cd /home/rushdynamic/Scripts/dotfiles-nixos";
+    fff = "fzf --preview=\"cat {}\" | wl-copy";
+    ffo = "code $(fzf --preview=\"cat {}\")";
   };
   
   environment.systemPackages = with pkgs; [
@@ -166,7 +168,6 @@
     swww
     vscode
     killall
-    font-awesome_5
     brave
     pavucontrol
     egl-wayland
@@ -191,6 +192,8 @@
     gnome.gnome-keyring
     gnome.seahorse
     stow
+    fzf
+    wl-clipboard
   ];
 
   services.gnome.gnome-keyring.enable = true;
