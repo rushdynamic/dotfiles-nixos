@@ -68,7 +68,11 @@
     WLR_NO_HARDWARE_CURSORS = "1";
 
     # Hint electron apps to use wayland
-    NIXOS_OZONE_WL = "1";
+    # NIXOS_OZONE_WL = "1";
+    MOZ_ENABLE_WAYLAND = "1";
+    XDG_SESSION_TYPE = "wayland";
+    LIBVA_DRIVER_NAME = "nvidia";
+    VDPAU_DRIVER = "nvidia";
   };
 
   xdg.portal.enable = true;
@@ -165,7 +169,35 @@
     gnome.nautilus
     ranger
     aria2
+    git
+    git-credential-manager
+    gnome.gnome-keyring
+    obs-studio
+    vlc
+    spotify
+    ncspot
+    obsidian
+    speedtest-cli
+    inxi
+    # nvidia-vaapi-driver
+    # libva
+    libva-utils
+    # vdpauinfo
+    ffmpeg
+    # libvdpau-va-gl
+    libsecret
+    stow
   ];
+
+  services.gnome.gnome-keyring.enable = true;
+
+  programs.git = {
+    enable = true;
+    package = pkgs.gitFull;
+    config = { 
+      credential.helper = "libsecret";
+    };
+  };
 
   fonts.packages = with pkgs; [
    # (nerdfonts.override { fonts = [ "JetBrainsMono" "RobotoMono" ]; })

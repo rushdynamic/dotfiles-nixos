@@ -7,11 +7,13 @@ boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
 # Enable OpenGL
   hardware.opengl = {
     enable = true;
-    extraPackages = with pkgs; [ nvidia-vaapi-driver ]; 
+    driSupport = true;
+    driSupport32Bit = true;
+    extraPackages = with pkgs; [ nvidia-vaapi-driver vaapiVdpau libvdpau-va-gl]; 
   };
 
   # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia-dkms"];
+  services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
 
