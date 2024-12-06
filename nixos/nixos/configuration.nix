@@ -146,7 +146,12 @@
   # $ nix search wget
   environment.shellAliases = {
     nconfig = "code /etc/nixos/configuration.nix";
+    gs = "git status";
+    gfo = "git fetch origin";
+    ga = "git add";
+    dots = "cd /home/rushdynamic/Scripts/dotfiles-nixos";
   };
+  
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
