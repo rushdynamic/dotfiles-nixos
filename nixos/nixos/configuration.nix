@@ -154,6 +154,9 @@
     dots = "cd /home/rushdynamic/Scripts/dotfiles-nixos";
     fff = "fzf --preview=\"cat {}\" | wl-copy";
     ffo = "code $(fzf --preview=\"cat {}\")";
+    ta = "task add";
+    tn = "task next";
+    tl = "task list";
   };
   
   environment.systemPackages = with pkgs; [
@@ -195,6 +198,7 @@
     fzf
     wl-clipboard
     socat
+    taskwarrior3
   ];
 
   services.gnome.gnome-keyring.enable = true;
