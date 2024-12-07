@@ -194,6 +194,7 @@
     stow
     fzf
     wl-clipboard
+    socat
   ];
 
   services.gnome.gnome-keyring.enable = true;
