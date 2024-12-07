@@ -205,6 +205,7 @@
     socat
     taskwarrior3
     alacritty
+    hyprcursor
   ];
 
   services.gnome.gnome-keyring.enable = true;
