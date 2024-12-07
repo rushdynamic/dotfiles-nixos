@@ -25,3 +25,6 @@ lines = 24
 [window.padding]
 x = 20
 y = 20
+
+[selection]
+save_to_clipboard = true
