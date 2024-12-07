@@ -1,5 +1,3 @@
-import = ["/home/rushdynamic/.config/alacritty/colorschemes/ashes-dark.toml", "/home/rushdynamic/.config/alacritty/fonts.toml"]
-live_config_reload = true
 
 [cursor]
 unfocused_hollow = false
@@ -28,3 +26,7 @@ y = 20
 
 [selection]
 save_to_clipboard = true
+
+[general]
+live_config_reload = true
+import = ["/home/rushdynamic/.config/alacritty/colorschemes/ashes-dark.toml", "/home/rushdynamic/.config/alacritty/fonts.toml"]

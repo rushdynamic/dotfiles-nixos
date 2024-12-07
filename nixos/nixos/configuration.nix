@@ -68,7 +68,7 @@
     WLR_NO_HARDWARE_CURSORS = "1";
 
     # Hint electron apps to use wayland
-    # NIXOS_OZONE_WL = "1";
+    NIXOS_OZONE_WL = "1";
     MOZ_ENABLE_WAYLAND = "1";
     XDG_SESSION_TYPE = "wayland";
     LIBVA_DRIVER_NAME = "nvidia";
@@ -117,6 +117,7 @@
   # Bluetooth
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  services.pipewire.enable = false;
   hardware.pulseaudio.enable = true;
   hardware.bluetooth.settings = {
     General = {
@@ -176,7 +177,6 @@
     egl-wayland
     nodejs
     openvpn
-    gnome.nautilus
     ranger
     aria2
     git
@@ -192,13 +192,19 @@
     libva-utils
     ffmpeg
     libsecret
-    gnome.gnome-keyring
-    gnome.seahorse
+    
+    # gnome
+    gnome-keyring
+    seahorse
+    gdm-settings
+    nautilus
+    
     stow
     fzf
     wl-clipboard
     socat
     taskwarrior3
+    alacritty
   ];
 
   services.gnome.gnome-keyring.enable = true;
