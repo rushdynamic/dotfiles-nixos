@@ -106,6 +106,20 @@
 	GBM_BACKEND = "nvidia";
   };
 
+  environment.shellAliases = {
+    nconfig = "code /etc/nixos/configuration.nix";
+    gs = "git status";
+    gfo = "git fetch origin";
+    ga = "git add";
+    gd = "git diff";
+    dots = "cd /home/rushdynamic/Scripts/dotfiles-nixos";
+    fff = "fzf --preview=\"cat {}\" | wl-copy";
+    ffo = "code $(fzf --preview=\"cat {}\")";
+    ta = "task add";
+    tn = "task next";
+    tl = "task list";
+  };
+
   programs.git = {
     enable = true;
     package = pkgs.gitFull;
