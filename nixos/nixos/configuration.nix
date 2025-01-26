@@ -163,6 +163,13 @@
   swww
   alacritty
   killall
+  fzf
+  wl-clipboard
+  socat
+  taskwarrior3
+  hyprcursor
+  obsidian
+  nautilus
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
