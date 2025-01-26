@@ -104,7 +104,6 @@
 	__NV_PRIME_RENDER_OFFLOAD_PROVIDER = "NVIDIA-G0";
 	__VK_LAYER_NV_optimus = "NVIDIA_only";
 	GBM_BACKEND = "nvidia";
-  NIXOS_OZONE_WL = "1";
   };
 
   environment.shellAliases = {
@@ -164,10 +163,6 @@
   swww
   alacritty
   killall
-
-  egl-wayland
-  libva-utils
-  nvidia-vaapi-driver
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
