@@ -12,16 +12,10 @@
     ];
 
   # Bootloader.
-  # boot.loader.systemd-boot.enable = true;
-  # boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.enable = true;
-  boot.loader.grub.devices = [ "nodev" ];
-  boot.loader.grub.efiSupport = true;
-  boot.loader.grub.useOSProber = true;
-  
 
- networking.hostName = "bebop"; # Define your hostname.
+  networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -35,7 +29,7 @@
   time.timeZone = "Asia/Kolkata";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "en_IN";
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_IN";
@@ -54,32 +48,9 @@
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
-
-
-  # Hyprland
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
-  environment.sessionVariables = {
-    # If your cursor becomes invisible
-    WLR_NO_HARDWARE_CURSORS = "1";
-
-    # Hint electron apps to use wayland
-    NIXOS_OZONE_WL = "1";
-    MOZ_ENABLE_WAYLAND = "1";
-    XDG_SESSION_TYPE = "wayland";
-    LIBVA_DRIVER_NAME = "nvidia";
-    VDPAU_DRIVER = "nvidia";
-    SSH_ASKPASS = "${pkgs.lxqt.lxqt-openssh-askpass}/bin/lxqt-openssh-askpass";
-  };
-
-  xdg.portal.enable = true;
-  # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  # Hyprland end
-
+  services.xserver.desktopManager.gnome.enable = true;
+  
+  programs.hyprland.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -87,42 +58,23 @@
     variant = "";
   };
 
-  # i3
-  services.xserver.windowManager = {
-    i3.enable = true;
-  };
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable Bluetooth GUI (blueman).
-  services.blueman.enable = true;
-
   # Enable sound with pipewire.
-  #hardware.pulseaudio.enable = false;
-  #security.rtkit.enable = true;
-  #services.pipewire = {
-   # enable = false;
-    #alsa.enable = true;
-    #alsa.support32Bit = true;
-    #pulse.enable = true;
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
-   #  media-session.enable = true;
-  #};
-
-  # Bluetooth
-  hardware.bluetooth.enable = true; # enables support for Bluetooth
-  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
-  services.pipewire.enable = false;
-  hardware.pulseaudio.enable = true;
-  hardware.bluetooth.settings = {
-    General = {
-      Enable = "Source,Sink,Media,Socket";
-    };
+    #media-session.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -139,76 +91,20 @@
   };
 
   # Install firefox.
-  programs.firefox.enable = false;
+  programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.shellAliases = {
-    nconfig = "code /etc/nixos/configuration.nix";
-    gs = "git status";
-    gfo = "git fetch origin";
-    ga = "git add";
-    gd = "git diff";
-    dots = "cd /home/rushdynamic/Scripts/dotfiles-nixos";
-    fff = "fzf --preview=\"cat {}\" | wl-copy";
-    ffo = "code $(fzf --preview=\"cat {}\")";
-    ta = "task add";
-    tn = "task next";
-    tl = "task list";
-  };
   
-  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-    networkmanagerapplet
-    kitty
-    (pkgs.waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-    }))
-    rofi-wayland
-    swww
-    vscode
-    killall
-    brave
-    pavucontrol
-    egl-wayland
-    nodejs
-    openvpn
-    ranger
-    aria2
-    git
-    git-credential-manager
-    lxqt.lxqt-openssh-askpass
-    obs-studio
-    vlc
-    spotify
-    ncspot
-    obsidian
-    speedtest-cli
-    inxi
-    libva-utils
-    ffmpeg
-    libsecret
-    
-    # gnome
-    gnome-keyring
-    seahorse
-    gdm-settings
-    nautilus
-    
-    stow
-    fzf
-    wl-clipboard
-    socat
-    taskwarrior3
-    alacritty
-    hyprcursor
-  ];
-
-  services.gnome.gnome-keyring.enable = true;
+  environment.sessionVariables = {
+	LIBVA_DRIVER_NAME = "nvidia";
+	__GLX_VENDOR_LIBRARY_NAME = "nvidia";
+	NVD_BACKEND = "direct";
+	__NV_PRIME_RENDER_OFFLOAD = "1";
+	__NV_PRIME_RENDER_OFFLOAD_PROVIDER = "NVIDIA-G0";
+	__VK_LAYER_NV_optimus = "NVIDIA_only";
+	GBM_BACKEND = "nvidia";
+  };
 
   programs.git = {
     enable = true;
@@ -218,13 +114,6 @@
     };
   };
 
-  fonts.packages = with pkgs; [
-   # (nerdfonts.override { fonts = [ "JetBrainsMono" "RobotoMono" ]; })
-    nerdfonts
-  ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
    programs.mtr.enable = true;
    programs.gnupg.agent = {
      enable = true;
@@ -239,6 +128,34 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  #  wget
+  kitty
+  vscode
+  gnomeExtensions.pop-shell
+  brave
+  git
+  git-credential-manager
+  libsecret
+  ];
+
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  # programs.mtr.enable = true;
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  # };
+
+  # List services that you want to enable:
+
+  # Enable the OpenSSH daemon.
+  # services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
