@@ -144,6 +144,11 @@
   libsecret
   nvitop
   stow
+  rofi-wayland
+  waybar
+  swww
+  alacritty
+  killall
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
