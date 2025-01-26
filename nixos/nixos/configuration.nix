@@ -142,6 +142,8 @@
   git
   git-credential-manager
   libsecret
+  nvitop
+  stow
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
