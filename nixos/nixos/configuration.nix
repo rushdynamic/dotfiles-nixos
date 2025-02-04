@@ -194,6 +194,7 @@
   polybar
   obs-studio
   autotiling
+  lxappearance
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
