@@ -192,6 +192,8 @@
   aria2
   unzip
   polybar
+  obs-studio
+  autotiling
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
