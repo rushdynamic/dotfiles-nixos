@@ -191,6 +191,7 @@
   pavucontrol
   go
   feh
+  picom
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
