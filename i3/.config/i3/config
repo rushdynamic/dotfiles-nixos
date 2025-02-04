@@ -281,6 +281,12 @@ bindsym $mod+Shift+g mode "$mode_gaps"
 assign [class="Lxappearance|Nitrogen"] 6
 assign [class="Pavucontrol|Xfce4-power-manager-settings"] 6
 
+# Assign Workspaces:
+assign [class="Brave"] $ws3
+assign [class="Firefox"] $ws3
+assign [class="Codium"] $ws1
+
+
 ##-- Window Rules ------------------------
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable

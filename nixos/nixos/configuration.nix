@@ -187,11 +187,14 @@
   taskwarrior3
   hyprcursor
   obsidian
-  nautilus
   pavucontrol
   go
   feh
   picom
+  nix-search-cli
+  xfce.thunar
+  aria2
+  unzip
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
