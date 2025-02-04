@@ -170,7 +170,6 @@
   vscodium
   #  wget
   kitty
-  gnomeExtensions.pop-shell
   brave
   git
   git-credential-manager
@@ -178,14 +177,11 @@
   nvitop
   stow
   rofi
-  waybar
-  swww
   alacritty
   killall
   fzf
   socat
   taskwarrior3
-  hyprcursor
   obsidian
   pavucontrol
   go
@@ -195,6 +191,7 @@
   xfce.thunar
   aria2
   unzip
+  polybar
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

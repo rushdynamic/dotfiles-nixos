@@ -302,8 +302,3 @@ for_window [class="VirtualBox Manager|qemu|Qemu-system-x86_64"] floating enable
 # xrandr --output HDMI-1-0 --brightness 0.7[[]]
 # You can also use any non-zero value if you'd like to have a border
 # for_window [class=".*"] border pixel 3
-
-bar {
-        status_command i3status
-        position top
-}
