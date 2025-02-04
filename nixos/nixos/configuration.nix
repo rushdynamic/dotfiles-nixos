@@ -125,7 +125,7 @@
   };
 
   environment.shellAliases = {
-    nconfig = "code /etc/nixos/configuration.nix";
+    nconfig = "codium /etc/nixos/configuration.nix";
     gs = "git status";
     gfo = "git fetch origin";
     ga = "git add";
@@ -189,6 +189,7 @@
   nautilus
   pavucontrol
   go
+  feh
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
