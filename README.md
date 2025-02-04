@@ -1,6 +1,6 @@
-# NixOS & Hyprland dotfiles
+# NixOS & i3-gaps dotfiles
 
-Personal configuration files for my NixOS x Hyprland build. Also includes dots for various misc programs.
+Personal configuration files for my NixOS x i3-gaps build. Also includes dots for various misc programs.
 Uses `GNU stow` for managing dotfiles.
 
 ### Adding a new config
