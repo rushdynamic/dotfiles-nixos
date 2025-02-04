@@ -195,6 +195,7 @@
   obs-studio
   autotiling
   lxappearance
+  exercism
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
