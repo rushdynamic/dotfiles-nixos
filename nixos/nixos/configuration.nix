@@ -127,6 +127,7 @@
   environment.shellAliases = {
     nconfig = "codium /etc/nixos/configuration.nix";
     i3config = "codium ~/.config/i3/config";
+    cod = "codium";
     gs = "git status";
     gfo = "git fetch origin";
     ga = "git add";
@@ -196,6 +197,8 @@
   autotiling
   lxappearance
   exercism
+  yarn
+  nodejs
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
