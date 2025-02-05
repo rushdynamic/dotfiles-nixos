@@ -199,6 +199,13 @@
   exercism
   yarn
   nodejs
+
+  bluez
+  bluez-tools
+  blueberry
+
+  zathura
+  pulsemixer
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
