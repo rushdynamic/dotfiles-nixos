@@ -211,10 +211,10 @@ bindsym Control+Shift+q exit
 mode "Resize" {
         # These bindings trigger as soon as you enter the resize mode
 
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym bracketleft resize shrink width 10 px or 10 ppt
+        bindsym minus resize grow height 10 px or 10 ppt
+        bindsym equal resize shrink height 10 px or 10 ppt
+        bindsym bracketright resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
