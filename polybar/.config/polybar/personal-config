@@ -17,7 +17,7 @@
 ;==========================================================
 
 [colors]
-background = #222222
+background = #030f0a
 background-alt = #373B41
 foreground = #C5C8C6
 primary = #A2CD83
@@ -27,7 +27,7 @@ disabled = #707880
 
 [bar/example]
 width = 100%
-height = 24pt
+height = 20pt
 radius = 0
 
 ; dpi = 96
@@ -48,13 +48,14 @@ padding-right = 1
 
 module-margin = 1
 
-separator = |
+separator = /
 separator-foreground = ${colors.disabled}
 
-font-0 = Iosevka NF SemiBold;2
+font-0 = JetBrainsMono NF SemiBold;2
 
-modules-left = xworkspaces xwindow
-modules-right = filesystem pulseaudio xkeyboard memory cpu wlan eth date
+modules-left = xworkspaces
+modules-center = xwindow
+modules-right = filesystem alsa memory cpu wlan date
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -102,21 +103,22 @@ label-empty-padding = 1
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:60:...%
+label = %title:0:80:...%
 
 [module/filesystem]
 type = internal/fs
 interval = 25
 
 mount-0 = /
-
-label-mounted = %{F#F0C674}%mountpoint%%{F-} %percentage_used%%
+format-mounted-prefix = "DISK "
+format-mounted-prefix-foreground = ${colors.primary}
+label-mounted = %percentage_used%%
 
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.disabled}
 
-[module/pulseaudio]
-type = internal/pulseaudio
+[module/alsa]
+type = internal/alsa
 
 format-volume-prefix = "VOL "
 format-volume-prefix-foreground = ${colors.primary}
@@ -126,18 +128,6 @@ label-volume = %percentage%%
 
 label-muted = muted
 label-muted-foreground = ${colors.disabled}
-
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-label-layout = %layout%
-label-layout-foreground = ${colors.primary}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-foreground = ${colors.background}
-label-indicator-background = ${colors.secondary}
 
 [module/memory]
 type = internal/memory
@@ -163,7 +153,7 @@ label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
 [module/wlan]
 inherit = network-base
 interface-type = wireless
-label-connected = %{F#F0C674}%ifname%%{F-} %essid% %local_ip%
+label-connected = %{F#F0C674}%ifname%%{F-} %essid%
 
 [module/eth]
 inherit = network-base
