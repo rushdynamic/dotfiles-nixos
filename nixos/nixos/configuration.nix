@@ -49,7 +49,6 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-
   
   programs.hyprland.enable = false;
 
@@ -171,6 +170,7 @@
   vscodium
   #  wget
   kitty
+  spotify
   brave
   git
   git-credential-manager
@@ -210,6 +210,15 @@
   libnotify
   htop
   protonvpn-gui
+  insomnia
+  tinygo
+  neovim
+  leiningen
+  clojure
+  babashka
+  ranger
+  openvpn
+  playerctl
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
