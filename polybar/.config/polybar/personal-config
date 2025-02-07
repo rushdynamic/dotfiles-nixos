@@ -53,9 +53,9 @@ separator-foreground = ${colors.disabled}
 
 font-0 = JetBrainsMono NF SemiBold;2
 
-modules-left = xworkspaces
+modules-left = xworkspaces foobar
 modules-center = xwindow
-modules-right = filesystem alsa memory cpu wlan date
+modules-right = wlan filesystem memory cpu alsa date
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -129,6 +129,15 @@ label-volume = %percentage%%
 label-muted = muted
 label-muted-foreground = ${colors.disabled}
 
+[module/foobar]
+type = custom/script
+exec = "node /home/rushdynamic/Code/playground/node/poly-scripts/time.ts"
+label = %output%
+format = <label>
+interval = 1
+format-background = ${colors.background}
+format-foreground = ${colors.primary}
+
 [module/memory]
 type = internal/memory
 interval = 2
@@ -168,7 +177,7 @@ date = %H:%M
 date-alt = %Y-%m-%d %H:%M:%S
 
 label = %date%
-label-foreground = ${colors.primary}
+label-foreground = ${colors.secondary}
 
 [settings]
 screenchange-reload = true
