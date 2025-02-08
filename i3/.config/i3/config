@@ -199,7 +199,7 @@ bindsym $alt+ctrl+0 move container to workspace number $ws10
 # reload the configuration file
 bindsym Control+$alt+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r exec --no-startup-id ~/.config/i3/bin/restart.sh
 # quit i3 session
 bindsym Control+Shift+q exit
 
