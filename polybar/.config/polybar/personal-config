@@ -53,7 +53,7 @@ separator-foreground = ${colors.disabled}
 
 font-0 = JetBrainsMono NF SemiBold;2
 
-modules-left = xworkspaces foobar
+modules-left = xworkspaces
 modules-center = xwindow
 modules-right = wlan filesystem memory cpu alsa date
 
@@ -129,15 +129,6 @@ label-volume = %percentage%%
 label-muted = muted
 label-muted-foreground = ${colors.disabled}
 
-[module/foobar]
-type = custom/script
-exec = "node /home/rushdynamic/Code/playground/node/poly-scripts/time.ts"
-label = %output%
-format = <label>
-interval = 1
-format-background = ${colors.background}
-format-foreground = ${colors.primary}
-
 [module/memory]
 type = internal/memory
 interval = 2
@@ -162,7 +153,7 @@ label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
 [module/wlan]
 inherit = network-base
 interface-type = wireless
-label-connected = %{F#F0C674}%ifname%%{F-} %essid%
+label-connected = %{F#F0C674}%ifname%%{F-}
 
 [module/eth]
 inherit = network-base
@@ -182,5 +173,4 @@ label-foreground = ${colors.secondary}
 [settings]
 screenchange-reload = true
 pseudo-transparency = true
-
 ; vim:ft=dosini
