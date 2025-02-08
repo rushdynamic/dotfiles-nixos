@@ -138,6 +138,7 @@
     ta = "task add";
     tn = "task next";
     tl = "task list";
+    ka = "killall";
   };
 
   programs.git = {
@@ -169,6 +170,7 @@
   environment.systemPackages = with pkgs; [
   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   vscodium
+  vlc
   #  wget
   kitty
   spotify
@@ -220,6 +222,7 @@
   ranger
   openvpn
   playerctl
+  simplescreenrecorder
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
