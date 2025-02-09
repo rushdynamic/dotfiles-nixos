@@ -223,6 +223,7 @@
   openvpn
   playerctl
   simplescreenrecorder
+  typescript
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

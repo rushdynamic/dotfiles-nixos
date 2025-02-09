@@ -170,6 +170,12 @@ date-alt = %Y-%m-%d %H:%M:%S
 label = %date%
 label-foreground = ${colors.secondary}
 
+[module/kanye]
+type = custom/script
+exec = "node /home/rushdynamic/Scripts/dotfiles-nixos/polybar/.config/polybar/scripts/kanye.js"
+label = %output%
+interval = 5
+
 [settings]
 screenchange-reload = true
 pseudo-transparency = true
