@@ -283,6 +283,7 @@ assign [class="Pavucontrol|Xfce4-power-manager-settings"] 6
 assign [class="Brave"] $ws3
 assign [class="Firefox"] $ws3
 assign [class="Codium"] $ws1
+assign [class="obsidian"] $ws4
 
 
 ##-- Window Rules ------------------------
