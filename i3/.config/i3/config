@@ -284,6 +284,8 @@ assign [class="Brave"] $ws3
 assign [class="Firefox"] $ws3
 assign [class="Codium"] $ws1
 assign [class="obsidian"] $ws4
+assign [class="obs"] $ws5
+assign [class="SimpleScreenRecorder"] $ws5
 
 
 ##-- Window Rules ------------------------

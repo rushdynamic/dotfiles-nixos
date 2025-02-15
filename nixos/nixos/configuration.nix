@@ -14,6 +14,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.supportedFilesystems = [ "ntfs" ];
 
   networking.hostName = "bebop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -140,6 +141,8 @@
     tl = "task list";
     ka = "killall";
     pf = "clear && pfetch";
+    nlvpn = "sudo openvpn --config /home/rushdynamic/Misc/proton-vpn-configs/nl-free-104.protonvpn.udp.ovpn --auth-user-pass /home/rushdynamic/Misc/proton-vpn-configs/ovpnau";
+    usvpn = "sudo openvpn --config /home/rushdynamic/Misc/proton-vpn-configs/us-free-12.protonvpn.udp.ovpn --auth-user-pass /home/rushdynamic/Misc/proton-vpn-configs/ovpnau";
   };
 
   programs.git = {
@@ -227,6 +230,9 @@
   typescript
   stremio
   pfetch
+  kdePackages.kdeconnect-kde
+  parted
+  ntfs3g
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
