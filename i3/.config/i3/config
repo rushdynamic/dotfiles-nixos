@@ -16,10 +16,10 @@ font pango:JetBrains Mono Medium 10
 title_align left
 
 # Uncomment this to enable title bars
-#for_window [class=".*"] border normal 4
+# for_window [class=".*"] border normal 4
 
 # Uncomment this to disable title bars
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 1
 
 # Gaps (Outer gaps are added to the inner gaps)
 gaps inner 15
@@ -29,13 +29,13 @@ gaps outer 0
 #smart_gaps on
 
 # Activate smart borders (always)
-#smart_borders on
+# smart_borders on
 
 ##-- Colors ------------------------------
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #A2CD83 #A2CD83 #FFFFFF #98C379   #A2CD83
-client.focused_inactive #61AFEF #61AFEF #1E222A #98C379   #61AFEF
+client.focused_inactive #414141 #414141 #1E222A #98C379   #414141
 client.unfocused        #2C3038 #2C3038 #FFFFFF #98C379   #2C3038
 client.urgent           #C678DD #C678DD #FFFFFF #98C379   #C678DD
 client.placeholder      #1E222A #1E222A #FFFFFF #98C379   #1E222A
