@@ -42,7 +42,6 @@ border-size = 0
 ; border-right = 12pt
 ; border-top = 6pt
 border-color = #00000000
-
 padding-left = 0
 padding-right = 1
 
@@ -51,7 +50,7 @@ module-margin = 1
 separator = /
 separator-foreground = ${colors.disabled}
 
-font-0 = JetBrainsMono NF SemiBold;2
+font-0 = Terminus:style=Medium:size=9
 
 modules-left = xworkspaces
 modules-center = xwindow
