@@ -17,7 +17,7 @@
 ;==========================================================
 
 [colors]
-background = #030f0a
+background = #000000 ;030f0a
 background-alt = #373B41
 foreground = #C5C8C6
 primary = #A2CD83
@@ -152,7 +152,7 @@ label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
 [module/wlan]
 inherit = network-base
 interface-type = wireless
-label-connected = %{F#F0C674}%ifname%%{F-}
+label-connected = %{A1:nm-connection-editor:}%{F#F0C674}%ifname%%{F-}%{A}
 
 [module/eth]
 inherit = network-base

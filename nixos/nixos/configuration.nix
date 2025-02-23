@@ -141,8 +141,6 @@
     tl = "task list";
     ka = "killall";
     pf = "clear && pfetch";
-    nlvpn = "sudo openvpn --config /home/rushdynamic/Misc/proton-vpn-configs/nl-free-104.protonvpn.udp.ovpn --auth-user-pass /home/rushdynamic/Misc/proton-vpn-configs/ovpnau";
-    usvpn = "sudo openvpn --config /home/rushdynamic/Misc/proton-vpn-configs/us-free-12.protonvpn.udp.ovpn --auth-user-pass /home/rushdynamic/Misc/proton-vpn-configs/ovpnau";
   };
 
   programs.git = {
@@ -234,6 +232,7 @@
   parted
   ntfs3g
   unrar
+  networkmanagerapplet
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
