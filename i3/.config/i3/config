@@ -49,6 +49,7 @@ exec_always --no-startup-id 	~/.config/i3/bin/autostart.sh
 bindsym $mod+Return 			exec --no-startup-id ~/.config/i3/bin/i3term.sh
 bindsym $mod+Shift+Return 		exec --no-startup-id ~/.config/i3/bin/i3term.sh --float
 bindsym $mod+t 				exec --no-startup-id alacritty
+bindsym $mod+Shift+t 			exec --no-startup-id alacritty --working-directory "$(readlink -e /proc/"$(pgrep -P "$(xdo pid)" | head -n 1)"/cwd)"
 
 # Dual monitor
 bindsym $mod+Shift+x                    exec xrandr --output DP-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-0 --mode 2560x1440 --pos 1920x0 --rotate normal

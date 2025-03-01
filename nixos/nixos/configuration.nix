@@ -233,6 +233,7 @@
   ntfs3g
   unrar
   networkmanagerapplet
+  xdo
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
