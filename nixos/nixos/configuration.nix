@@ -44,6 +44,10 @@
     LC_TIME = "en_IN";
   };
 
+  # Default session selection
+  services.displayManager.defaultSession = "none+i3";
+
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -56,7 +60,6 @@
   # enabling i3-gaps
   environment.pathsToLink = [ "/libexec" ];
   services.xserver.desktopManager.xterm.enable = false;
-  services.xserver.displayManager.defaultSession = "none+i3";
   services.xserver.windowManager.i3 = {
     enable = true;
     package = pkgs.i3-gaps;
