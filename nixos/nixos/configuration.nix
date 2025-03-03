@@ -237,6 +237,9 @@
   unrar
   networkmanagerapplet
   xdo
+  gtk3
+  dconf
+  gnome-themes-extra
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
