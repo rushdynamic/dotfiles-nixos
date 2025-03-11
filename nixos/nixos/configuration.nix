@@ -240,6 +240,8 @@
   gtk3
   dconf
   gnome-themes-extra
+  bitwarden-cli
+  rclone
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
