@@ -72,6 +72,7 @@ bindsym $mod+m 					exec --no-startup-id ~/.config/i3/rofi/bin/mpd
 bindsym $mod+Shift+S 				exec --no-startup-id ~/.config/i3/rofi/bin/screenshot
 bindsym $mod+r 					exec --no-startup-id ~/.config/i3/rofi/bin/asroot
 bindsym $alt+Shift+w 				exec --no-startup-id ~/.config/i3/rofi/bin/windows
+bindsym $mod+Tab 				exec rofi -show window
 
 # -- Function keys --
 bindsym XF86MonBrightnessUp 	exec --no-startup-id "brightness --inc"
