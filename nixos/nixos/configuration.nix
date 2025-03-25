@@ -135,7 +135,7 @@
     gfo = "git fetch origin";
     ga = "git add";
     gd = "git diff";
-    gl = "git log --oneline";
+    gl = "clear && git log --oneline";
     dots = "cd /home/rushdynamic/Scripts/dotfiles-nixos";
     fff = "fzf --preview=\"cat {}\" | wl-copy";
     ffo = "code $(fzf --preview=\"cat {}\")";
