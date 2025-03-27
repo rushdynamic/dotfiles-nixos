@@ -51,8 +51,8 @@ bindsym $mod+Shift+Return 		exec --no-startup-id ~/.config/i3/bin/i3term.sh --fl
 bindsym $mod+t 				exec --no-startup-id alacritty
 bindsym $mod+Shift+t 			exec --no-startup-id alacritty --working-directory "$(readlink -e /proc/"$(pgrep -P "$(xdo pid)" | head -n 1)"/cwd)"
 
-# Dual monitor
-bindsym $mod+Shift+x                    exec xrandr --output DP-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-0 --mode 2560x1440 --pos 1920x0 --rotate normal
+# Single monitor
+bindsym $mod+Shift+x                    exec xrandr --output eDP-1-1 --primary --mode 1920x1080 --pos 0x0
 
 # -- Apps --
 bindsym $mod+Shift+f 			exec --no-startup-id thunar
@@ -297,9 +297,18 @@ for_window [class="Pavucontrol|Xfce4-power-manager-settings|Nm-connection-editor
 for_window [class="feh|Viewnior|Gpicview|Gimp|MPlayer"] floating enable
 for_window [class="Kvantum Manager|qt5ct"] floating enable
 for_window [class="VirtualBox Manager|qemu|Qemu-system-x86_64"] floating enable
-
 for_window [urgent="latest"] focus
 # for_window [urgent="latest" class="Chromium"] focus
+
+workspace 1 output primary
+workspace 2 output primary
+workspace 3 output primary
+workspace 4 output primary
+workspace 5 output primary
+workspace 6 output secondary
+workspace 7 output secondary
+workspace 8 output secondary
+workspace 9 output secondary
 
 # BRIGHTNESS
 # xrandr --output HDMI-1-0 --brightness 0.7[[]]

@@ -25,10 +25,14 @@ secondary = #8ABEB7
 alert = #A54242
 disabled = #707880
 
-[bar/example]
+
+[bar/external]
+monitor = HDMI-0
+monitor-fallback = eDP-1-1
 width = 100%
 height = 20pt
 radius = 0
+
 
 ; dpi = 96
 
@@ -179,3 +183,17 @@ interval = 5
 screenchange-reload = true
 pseudo-transparency = true
 ; vim:ft=dosini
+
+
+[bar/laptop]
+monitor = eDP-1-1
+width = 100%
+height = 20pt
+radius = 0
+modules-left = xworkspaces
+modules-center = xwindow
+modules-right = alsa date
+padding-right = 1
+module-margin = 1
+separator = /
+separator-foreground = ${colors.disabled}
