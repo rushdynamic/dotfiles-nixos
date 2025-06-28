@@ -169,6 +169,8 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  services.resolved.enable = true;
+
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -243,6 +245,8 @@
   bitwarden-cli
   llm
   python3Full
+  gimp-with-plugins
+  chromium
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
