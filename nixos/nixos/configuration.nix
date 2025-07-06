@@ -171,6 +171,15 @@
 
   services.resolved.enable = true;
 
+  nixpkgs.overlays = [
+    (self: super: {
+      unstable = import <nixos-unstable> { 
+        system = self.system;
+        config.allowUnfree = true;
+      };
+    })
+  ];
+
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -248,6 +257,7 @@
   gimp-with-plugins
   chromium
   gpu-screen-recorder-gtk
+  unstable.claude-code
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
