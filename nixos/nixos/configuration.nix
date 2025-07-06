@@ -247,6 +247,7 @@
   python3Full
   gimp-with-plugins
   chromium
+  gpu-screen-recorder-gtk
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
