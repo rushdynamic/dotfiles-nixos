@@ -258,6 +258,7 @@
   chromium
   gpu-screen-recorder-gtk
   unstable.claude-code
+  stretchly
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
