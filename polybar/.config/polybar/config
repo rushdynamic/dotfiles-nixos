@@ -58,7 +58,7 @@ font-0 = Terminus:style=Medium:size=9
 
 modules-left = xworkspaces
 modules-center = xwindow
-modules-right = wlan filesystem memory cpu alsa date
+modules-right = wlan filesystem memory cpu pulseaudio audio-output date
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -111,26 +111,42 @@ label = %title:0:80:...%
 [module/filesystem]
 type = internal/fs
 interval = 25
-
 mount-0 = /
 format-mounted-prefix = "DISK "
 format-mounted-prefix-foreground = ${colors.primary}
 label-mounted = %percentage_used%%
-
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.disabled}
 
-[module/alsa]
-type = internal/alsa
 
+[module/pulseaudio]
+type = internal/pulseaudio
+; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+; If not, uses default sink
+; sink = alsa_output.pci-0000_12_00.3.analog-stereo
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = true
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
+interval = 5
+; Reverses the increment/decrement on scroll event. Set this to true if you are
+; using natural scrolling option on your touchpad.
+; New in version 3.7.0
+; Default: false
+reverse-scroll = false
 format-volume-prefix = "VOL "
 format-volume-prefix-foreground = ${colors.primary}
 format-volume = <label-volume>
-
-label-volume = %percentage%%
-
 label-muted = muted
 label-muted-foreground = ${colors.disabled}
+click-right = alacritty -e pulsemixer
+
+[module/audio-output]
+type = "custom/script"
+exec = "~/.config/polybar/scripts/audio-output.sh"
+label = %output%
+interval = 5
 
 [module/memory]
 type = internal/memory
@@ -192,7 +208,7 @@ height = 20pt
 radius = 0
 modules-left = xworkspaces
 modules-center = xwindow
-modules-right = alsa date
+modules-right = pulseaudio date
 padding-right = 1
 module-margin = 1
 separator = /

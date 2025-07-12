@@ -96,7 +96,7 @@
   # };
 
   services.pipewire.enable = lib.mkForce false;
-  hardware.pulseaudio.enable = true;
+  services.pulseaudio.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -211,7 +211,9 @@
   xfce.thunar
   aria2
   unzip
-  polybar
+  (polybar.override {
+    pulseSupport = true;
+  })
   obs-studio
   autotiling
   lxappearance
@@ -259,6 +261,8 @@
   gpu-screen-recorder-gtk
   unstable.claude-code
   stretchly
+  slack
+  discord
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
