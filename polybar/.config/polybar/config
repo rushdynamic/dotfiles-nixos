@@ -17,13 +17,19 @@
 ;==========================================================
 
 [colors]
-background = #000000 ;030f0a
+background = #000000 
+;030f0a
 background-alt = #373B41
 foreground = #C5C8C6
 primary = #A2CD83
 secondary = #8ABEB7
 alert = #A54242
 disabled = #707880
+pastel-1 = #D9BACB
+pastel-2 = #B8D3D9
+pastel-3 = #F2E0C9
+pastel-4 = #F2D5E5
+pastel-dark = #594C53
 
 
 [bar/external]
@@ -113,7 +119,7 @@ type = internal/fs
 interval = 25
 mount-0 = /
 format-mounted-prefix = "DISK "
-format-mounted-prefix-foreground = ${colors.primary}
+format-mounted-prefix-foreground = ${colors.pastel-4}
 label-mounted = %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.disabled}
@@ -136,7 +142,7 @@ interval = 5
 ; Default: false
 reverse-scroll = false
 format-volume-prefix = "VOL "
-format-volume-prefix-foreground = ${colors.primary}
+format-volume-prefix-foreground = ${colors.pastel-1}
 format-volume = <label-volume>
 label-muted = muted
 label-muted-foreground = ${colors.disabled}
@@ -146,20 +152,21 @@ click-right = alacritty -e pulsemixer
 type = "custom/script"
 exec = "~/.config/polybar/scripts/audio-output.sh"
 label = %output%
+label-foreground = ${colors.pastel-1}
 interval = 5
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = "RAM "
-format-prefix-foreground = ${colors.primary}
+format-prefix-foreground = ${colors.pastel-2}
 label = %percentage_used:2%%
 
 [module/cpu]
 type = internal/cpu
 interval = 2
 format-prefix = "CPU "
-format-prefix-foreground = ${colors.primary}
+format-prefix-foreground = ${colors.pastel-3}
 label = %percentage:2%%
 
 [network-base]
@@ -172,7 +179,9 @@ label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
 [module/wlan]
 inherit = network-base
 interface-type = wireless
-label-connected = %{A1:nm-connection-editor:}%{F#F0C674}%ifname%%{F-}%{A}
+;;label-connected = %{A1:alacritty -e nmtui:}%{F#F0C674}%ifname%%{F-}%{A}
+label-connected = %{A1:alacritty -e nmtui:}%ifname%%{A}
+label-connected-foreground = ${colors.primary}
 
 [module/eth]
 inherit = network-base
@@ -183,8 +192,8 @@ label-connected = %{F#F0C674}%ifname%%{F-} %local_ip%
 type = internal/date
 interval = 1
 
-date = %H:%M
-date-alt = %Y-%m-%d %H:%M:%S
+date = %I:%M %p
+date-alt = %Y-%m-%d %I:%M:%S
 
 label = %date%
 label-foreground = ${colors.secondary}
