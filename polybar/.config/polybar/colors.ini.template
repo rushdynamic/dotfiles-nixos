@@ -1,9 +1,9 @@
 [colors]
 bg=${POLYBAR_BG}
 ;030f0a
-background-alt = #373B41
-fg = #C5C8C6
-primary = #A2CD83
+background-alt = ${POLYBAR_COMP}
+fg = ${POLYBAR_FG}
+primary = ${POLYBAR_ACCENT}
 secondary = #8ABEB7
 alert = #A54242
 disabled = #707880

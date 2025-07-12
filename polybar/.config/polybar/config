@@ -103,8 +103,9 @@ type = internal/fs
 interval = 25
 mount-0 = /
 format-mounted-prefix = "DISK "
-format-mounted-prefix-foreground = ${colors.pastel-4}
+format-mounted-prefix-foreground = ${colors.fg}
 label-mounted = %percentage_used%%
+label-mounted-foreground = ${colors.primary}
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.disabled}
 
@@ -126,32 +127,35 @@ interval = 5
 ; Default: false
 reverse-scroll = false
 format-volume-prefix = "VOL "
-format-volume-prefix-foreground = ${colors.pastel-1}
+format-volume-prefix-foreground = ${colors.fg}
 format-volume = <label-volume>
 label-muted = muted
 label-muted-foreground = ${colors.disabled}
+label-volume-foreground = ${colors.primary}
 click-right = alacritty -e pulsemixer
 
 [module/audio-output]
 type = "custom/script"
 exec = "~/.config/polybar/scripts/audio-output.sh"
 label = %output%
-label-foreground = ${colors.pastel-1}
+label-foreground = ${colors.primary}
 interval = 5
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = "RAM "
-format-prefix-foreground = ${colors.pastel-2}
+format-prefix-foreground = ${colors.fg}
 label = %percentage_used:2%%
+label-foreground = ${colors.primary}
 
 [module/cpu]
 type = internal/cpu
 interval = 2
 format-prefix = "CPU "
-format-prefix-foreground = ${colors.pastel-3}
+format-prefix-foreground = ${colors.fg}
 label = %percentage:2%%
+label-foreground = ${colors.primary}
 
 [network-base]
 type = internal/network
@@ -180,7 +184,7 @@ date = %I:%M %p
 date-alt = %Y-%m-%d %I:%M:%S
 
 label = %date%
-label-foreground = ${colors.secondary}
+label-foreground = ${colors.fg}
 
 [module/kanye]
 type = custom/script
@@ -206,5 +210,7 @@ padding-right = 1
 module-margin = 1
 separator = /
 separator-foreground = ${colors.disabled}
+background = ${colors.bg}
+foreground = ${colors.fg}
 
 include-file = /home/rushdynamic/Scripts/dotfiles-nixos/polybar/.config/polybar/colors.ini
