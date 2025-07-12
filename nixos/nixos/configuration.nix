@@ -144,6 +144,7 @@
     tl = "task list";
     ka = "killall";
     pf = "clear && pfetch";
+    x = "xclip -selection clipboard";
   };
 
   programs.git = {
@@ -264,6 +265,7 @@
   slack
   discord
   envsubst
+  xclip
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
