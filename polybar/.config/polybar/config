@@ -16,22 +16,6 @@
 ;
 ;==========================================================
 
-[colors]
-background = #000000 
-;030f0a
-background-alt = #373B41
-foreground = #C5C8C6
-primary = #A2CD83
-secondary = #8ABEB7
-alert = #A54242
-disabled = #707880
-pastel-1 = #D9BACB
-pastel-2 = #B8D3D9
-pastel-3 = #F2E0C9
-pastel-4 = #F2D5E5
-pastel-dark = #594C53
-
-
 [bar/external]
 monitor = HDMI-0
 monitor-fallback = eDP-1-1
@@ -42,8 +26,8 @@ radius = 0
 
 ; dpi = 96
 
-background = ${colors.background}
-foreground = ${colors.foreground}
+background = ${colors.bg}
+foreground = ${colors.fg}
 
 line-size = 3pt
 
@@ -222,3 +206,5 @@ padding-right = 1
 module-margin = 1
 separator = /
 separator-foreground = ${colors.disabled}
+
+include-file = /home/rushdynamic/Scripts/dotfiles-nixos/polybar/.config/polybar/colors.ini
