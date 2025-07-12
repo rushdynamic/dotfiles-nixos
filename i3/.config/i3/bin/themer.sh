@@ -4,6 +4,7 @@ wallpaper=$1
 
 read -ra res <<< "$(/home/rushdynamic/Scripts/dotfiles-nixos/i3/.config/i3/bin/huegenics "$wallpaper")"
 export POLYBAR_BG="${res[0]}"
+export I3_BG="${res[0]}"
 export POLYBAR_ACCENT="${res[1]}"
 theme=${res[2]}
 if [ "$theme" = "dark" ]; then

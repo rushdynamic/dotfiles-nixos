@@ -1,0 +1,319 @@
+## i3wm configuration for NixOS
+
+##-- Mod Keys ----------------------------
+set $mod Mod4
+set $alt Mod1
+
+##-- Fonts (Global) ----------------------
+font pango:JetBrains Mono Medium 10
+
+##-- Gaps --------------------------------
+
+# Title bar text alignment
+title_align left
+
+# Uncomment this to enable title bars
+# for_window [class=".*"] border normal 4
+
+# Uncomment this to disable title bars
+for_window [class=".*"] border pixel 1
+
+# Gaps (Outer gaps are added to the inner gaps)
+gaps inner 15
+gaps outer 0
+
+# Only enable gaps on a workspace when there is at least one container
+#smart_gaps on
+
+# Activate smart borders (always)
+# smart_borders on
+
+##-- Colors ------------------------------
+
+# class                 border  backgr. text    indicator child_border
+client.focused            $I3_BG    $I3_BG #FFFFFF  $I3_BG      $I3_BG
+client.focused_inactive #414141 #414141 #1E222A #98C379   #414141
+client.unfocused        #2C3038 #2C3038 #FFFFFF #98C379   #2C3038
+client.urgent           #C678DD #C678DD #FFFFFF #98C379   #C678DD
+client.placeholder      #1E222A #1E222A #FFFFFF #98C379   #1E222A
+
+client.background       #1E222A
+
+##-- Autostart ---------------------------
+
+exec_always --no-startup-id 	~/.config/i3/bin/autostart.sh
+
+##-- Key Bindings ------------------------
+
+# -- Terminal --
+bindsym $mod+Return 			exec --no-startup-id ~/.config/i3/bin/i3term.sh
+bindsym $mod+Shift+Return 		exec --no-startup-id ~/.config/i3/bin/i3term.sh --float
+bindsym $mod+t 				exec --no-startup-id alacritty
+bindsym $mod+Shift+t 			exec --no-startup-id alacritty --working-directory "$(readlink -e /proc/"$(pgrep -P "$(xdo pid)" | head -n 1)"/cwd)"
+
+# Single monitor
+bindsym $mod+Shift+x                    exec xrandr --output eDP-1-1 --primary --mode 1920x1080 --pos 0x0
+
+# Dual monitor
+bindsym $mod+Shift+y                    exec xrandr --output eDP-1-1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-0 --primary --mode 2560x1440 --pos 1920x0 --rotate normal &
+
+# -- Apps --
+bindsym $mod+Shift+f 			exec --no-startup-id thunar
+bindsym $mod+Shift+e 			exec --no-startup-id geany
+bindsym $mod+Shift+w 			exec --no-startup-id firefox
+bindsym $alt+Control+v 			exec --no-startup-id "alacritty --config-file ~/.config/i3/alacritty/alacritty.yml -e vim"
+bindsym $alt+Control+n 			exec --no-startup-id "alacritty --config-file ~/.config/i3/alacritty/alacritty.yml -e nvim"
+bindsym $alt+Control+r 			exec --no-startup-id "alacritty --config-file ~/.config/i3/alacritty/alacritty.yml -e ranger"
+bindsym $alt+Control+h 			exec --no-startup-id "alacritty --config-file ~/.config/i3/alacritty/alacritty.yml -e htop"
+bindsym $alt+Control+b 			exec --no-startup-id "alacritty --config-file ~/.config/i3/alacritty/alacritty.yml -e bashtop"
+
+# -- Rofi --
+bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
+bindsym $mod+n 					exec --no-startup-id ~/.config/i3/rofi/bin/network_menu
+bindsym $mod+x 					exec --no-startup-id ~/.config/i3/rofi/bin/powermenu
+bindsym $mod+m 					exec --no-startup-id ~/.config/i3/rofi/bin/mpd
+bindsym $mod+Shift+S 				exec --no-startup-id ~/.config/i3/rofi/bin/screenshot
+bindsym $mod+r 					exec --no-startup-id ~/.config/i3/rofi/bin/asroot
+bindsym $alt+Shift+w 				exec --no-startup-id ~/.config/i3/rofi/bin/windows
+bindsym $mod+Tab 				exec rofi -show window
+
+# -- Function keys --
+bindsym XF86MonBrightnessUp 	exec --no-startup-id "brightness --inc"
+bindsym XF86MonBrightnessDown 	exec --no-startup-id "brightness --dec"
+bindsym F12 	                exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && "volume"
+bindsym F11 	                exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && "volume"
+bindsym F10 			exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+# bindsym XF86AudioRaiseVolume 	exec --no-startup-id "volume --inc"
+# bindsym XF86AudioLowerVolume 	exec --no-startup-id "volume --dec"
+# bindsym XF86AudioMute 			exec --no-startup-id "volume --toggle"
+# bindsym XF86AudioMicMute 		exec --no-startup-id "volume --toggle-mic"
+bindsym F9 			exec --no-startup-id "playerctl next"
+bindsym F7 			exec --no-startup-id "playerctl previous"
+bindsym F8 			exec --no-startup-id "playerctl play-pause"
+
+# -- Screenshots --
+bindsym Print 					exec --no-startup-id "takeshot --now"
+bindsym $mod+Print 				exec --no-startup-id "takeshot --in5"
+bindsym Shift+Print 			exec --no-startup-id "takeshot --in10"
+bindsym Control+Print 			exec --no-startup-id "takeshot --win"
+bindsym $mod+Control+Print 		exec --no-startup-id "takeshot --area"
+
+# -- i3wm --
+
+# Lockscreen
+bindsym $alt+Control+l 			exec --no-startup-id "betterlockscreen --lock"
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# change focus
+bindsym $alt+bracketleft focus left
+bindsym $alt+bracketright focus right
+bindsym $alt+equal focus up
+bindsym $alt+minus focus down
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $alt+Shift+bracketleft move left
+bindsym $alt+Shift+bracketright move right
+bindsym $alt+Shift+equal move up
+bindsym $alt+Shift+minus move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym ctrl+$alt+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+Shift+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+##-- Workspaces ---------------------
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $alt+1 workspace number $ws1
+bindsym $alt+2 workspace number $ws2
+bindsym $alt+3 workspace number $ws3
+bindsym $alt+4 workspace number $ws4
+bindsym $alt+5 workspace number $ws5
+bindsym $alt+6 workspace number $ws6
+bindsym $alt+7 workspace number $ws7
+bindsym $alt+8 workspace number $ws8
+bindsym $alt+9 workspace number $ws9
+bindsym $alt+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $alt+ctrl+1 move container to workspace number $ws1
+bindsym $alt+ctrl+2 move container to workspace number $ws2
+bindsym $alt+ctrl+3 move container to workspace number $ws3
+bindsym $alt+ctrl+4 move container to workspace number $ws4
+bindsym $alt+ctrl+5 move container to workspace number $ws5
+bindsym $alt+ctrl+6 move container to workspace number $ws6
+bindsym $alt+ctrl+7 move container to workspace number $ws7
+bindsym $alt+ctrl+8 move container to workspace number $ws8
+bindsym $alt+ctrl+9 move container to workspace number $ws9
+bindsym $alt+ctrl+0 move container to workspace number $ws10
+
+# reload the configuration file
+bindsym Control+$alt+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r exec --no-startup-id ~/.config/i3/bin/restart.sh
+# quit i3 session
+bindsym Control+Shift+q exit
+
+##-- Resize / Move / Gaps ------------------------
+
+# resize window (you can also use the mouse for that)
+mode "Resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        bindsym bracketleft resize shrink width 10 px or 10 ppt
+        bindsym minus resize grow height 10 px or 10 ppt
+        bindsym equal resize shrink height 10 px or 10 ppt
+        bindsym bracketright resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+bindsym $alt+$mod+Shift+r mode "Resize"
+
+mode "Move" {
+        # These bindings trigger as soon as you enter the Move mode
+
+        bindsym Left move left 20px
+        bindsym Down move down  20px
+        bindsym Up move up 20px
+        bindsym Right move right 20px
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+m mode "default"
+}
+bindsym $mod+Shift+m mode "Move"
+
+set $mode_gaps Gaps: (o)uter, (i)nner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "$mode_gaps"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "$mode_gaps"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "$mode_gaps"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+##-- Workspace Rules ------------------------
+assign [class="Lxappearance|Nitrogen"] 6
+assign [class="Pavucontrol|Xfce4-power-manager-settings"] 6
+
+# Assign Workspaces:
+assign [class="Brave"] $ws3
+assign [class="Firefox"] $ws3
+assign [class="Codium"] $ws1
+assign [class="obsidian"] $ws4
+assign [class="obs"] $ws5
+assign [class="SimpleScreenRecorder"] $ws5
+
+
+##-- Window Rules ------------------------
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [class="alacritty-float"] floating enable
+for_window [class="Pcmanfm|Onboard|Yad"] floating enable
+for_window [class="Lxappearance|Nitrogen"] floating enable
+for_window [class="Pavucontrol|Xfce4-power-manager-settings|Nm-connection-editor"] floating enable
+for_window [class="feh|Viewnior|Gpicview|Gimp|MPlayer"] floating enable
+for_window [class="Kvantum Manager|qt5ct"] floating enable
+for_window [class="VirtualBox Manager|qemu|Qemu-system-x86_64"] floating enable
+for_window [urgent="latest"] focus
+# for_window [urgent="latest" class="Chromium"] focus
+
+workspace 1 output primary
+workspace 2 output primary
+workspace 3 output primary
+workspace 4 output primary
+workspace 5 output primary
+workspace 6 output secondary
+workspace 7 output secondary
+workspace 8 output secondary
+workspace 9 output secondary
+
+# BRIGHTNESS
+# xrandr --output HDMI-1-0 --brightness 0.7[[]]
+# You can also use any non-zero value if you'd like to have a border
+# for_window [class=".*"] border pixel 3
