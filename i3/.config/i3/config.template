@@ -32,10 +32,10 @@ gaps outer 0
 
 # class                 border  backgr. text    indicator child_border
 client.focused            $I3_BG    $I3_BG #FFFFFF  $I3_BG      $I3_BG
-client.focused_inactive #414141 #414141 #1E222A #98C379   #414141
-client.unfocused        #2C3038 #2C3038 #FFFFFF #98C379   #2C3038
-client.urgent           #C678DD #C678DD #FFFFFF #98C379   #C678DD
-client.placeholder      #1E222A #1E222A #FFFFFF #98C379   #1E222A
+client.focused_inactive #414141 #414141 #1E222A $I3_BG   #414141
+client.unfocused        #2C3038 #2C3038 #FFFFFF $I3_BG   #2C3038
+client.urgent           #C678DD #C678DD #FFFFFF $I3_BG   #C678DD
+client.placeholder      #1E222A #1E222A #FFFFFF $I3_BG   #1E222A
 
 client.background       #1E222A
 
