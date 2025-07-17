@@ -76,6 +76,19 @@
     variant = "";
   };
 
+  # Mount Windows partitions
+  fileSystems."/home/rushdynamic/Mount/Windows/Work" = {
+    device = "/dev/sda1";
+    fsType = "ntfs-3g";
+    options = [ "rw" "uid=1000" "gid=100" "umask=022" ];
+  };
+
+  fileSystems."/home/rushdynamic/Mount/Windows/Misc" = {
+    device = "/dev/sda3";
+    fsType = "ntfs-3g";
+    options = [ "uid=1000" "gid=100" "umask=022" ];
+  };
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -263,7 +276,6 @@
   unstable.claude-code
   stretchly
   slack
-  discord
   envsubst
   xclip
   ];
@@ -288,6 +300,8 @@
   # networking.firewall.enable = false;
 
   virtualisation.virtualbox.host.enable = true;
+  # boot.kernelParams = [ "kvm.enable_virt_at_load=0" ]; # for virtualbox
+
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
