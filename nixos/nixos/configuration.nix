@@ -12,9 +12,17 @@
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.efiSysMountPoint = "/boot";
   boot.supportedFilesystems = [ "ntfs" ];
+  boot.loader.timeout = 5;
+  boot.loader.grub = {
+    enable = true;
+    efiSupport = true;
+    useOSProber = true;
+    devices = [ "nodev" ];  # for UEFI
+  };
 
   networking.hostName = "bebop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -279,6 +287,8 @@
   envsubst
   xclip
   discord
+  os-prober
+  efibootmgr
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
