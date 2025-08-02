@@ -149,7 +149,7 @@
   };
 
   environment.shellAliases = {
-    nconfig = "codium /etc/nixos/configuration.nix";
+    nconfig = "codium /etc/nixos";
     i3config = "codium ~/.config/i3";
     cod = "codium";
     gs = "git status";

@@ -81,8 +81,8 @@ with pkgs; [
   slack
   envsubst
   xclip
-  discord
   os-prober
   efibootmgr
+  gum
   ghostty
 ]
