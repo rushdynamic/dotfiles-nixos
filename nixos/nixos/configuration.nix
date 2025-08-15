@@ -166,6 +166,7 @@
     ka = "killall";
     pf = "clear && pfetch";
     x = "xclip -selection clipboard";
+    nmt = "/home/rushdynamic/Scripts/dotfiles-nixos/misc/nmtui-wrapper.sh";
   };
 
   programs.git = {

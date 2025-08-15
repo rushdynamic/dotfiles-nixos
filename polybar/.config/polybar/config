@@ -168,7 +168,7 @@ label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
 inherit = network-base
 interface-type = wireless
 ;;label-connected = %{A1:alacritty -e nmtui:}%{F#F0C674}%ifname%%{F-}%{A}
-label-connected = %{A1:alacritty -e nmtui:}%ifname%%{A}
+label-connected = %{A1:alacritty -e bash -i -c nmt:}%ifname%%{A}
 label-connected-foreground = ${colors.primary}
 
 [module/eth]
