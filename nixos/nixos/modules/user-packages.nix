@@ -85,4 +85,6 @@ with pkgs; [
   efibootmgr
   gum
   ghostty
+  audacity
+  gcc
 ]
