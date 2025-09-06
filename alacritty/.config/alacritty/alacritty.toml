@@ -30,3 +30,30 @@ save_to_clipboard = true
 [general]
 live_config_reload = true
 import = ["/home/rushdynamic/.config/alacritty/colorschemes/ashes-dark.toml", "/home/rushdynamic/.config/alacritty/fonts.toml"]
+
+
+[[keyboard.bindings]]
+key = "PageUp"
+action = "ScrollLineUp"
+
+[[keyboard.bindings]]
+key = "PageDown"
+action = "ScrollLineDown"
+
+[[keyboard.bindings]]
+key = "Home"
+action = "ScrollToTop"
+
+[[keyboard.bindings]]
+key = "End"
+action = "ScrollToBottom"
+
+[[keyboard.bindings]]
+key = "PageUp"
+mods = "Control|Shift"
+action = "ScrollPageUp"
+
+[[keyboard.bindings]]
+key = "PageDown"
+mods = "Control|Shift"
+action = "ScrollPageDown"
