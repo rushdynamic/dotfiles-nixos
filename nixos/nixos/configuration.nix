@@ -146,7 +146,9 @@
 	__NV_PRIME_RENDER_OFFLOAD_PROVIDER = "NVIDIA-G0";
 	__VK_LAYER_NV_optimus = "NVIDIA_only";
 	GBM_BACKEND = "nvidia";
+  JAVA_HOME = "${pkgs.openjdk}";
   };
+
 
   environment.shellAliases = {
     nconfig = "codium /etc/nixos";

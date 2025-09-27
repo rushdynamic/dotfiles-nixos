@@ -6,7 +6,6 @@ with pkgs; [
   vlc
   #  wget
   kitty
-  spotify
   brave
   git
   git-credential-manager
@@ -87,4 +86,9 @@ with pkgs; [
   ghostty
   audacity
   gcc
+youtube-music
+shutter
+ncspot
+bruno
+openjdk
 ]
