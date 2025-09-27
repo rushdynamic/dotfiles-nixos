@@ -1,4 +1,5 @@
 ## i3wm configuration for NixOS
+## WARNING: Don't modify the `config` file directly, modify the `config.template` file instead
 
 ##-- Mod Keys ----------------------------
 set $mod Mod4
@@ -102,6 +103,7 @@ bindsym $mod+Control+Print 		exec --no-startup-id "takeshot --area"
 
 # Lockscreen
 bindsym $alt+Control+l 			exec --no-startup-id "betterlockscreen --lock"
+bindsym $mod+Shift+z 			exec --no-startup-id "systemctl suspend"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
