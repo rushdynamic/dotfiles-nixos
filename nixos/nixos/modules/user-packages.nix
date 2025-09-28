@@ -91,4 +91,5 @@ shutter
 ncspot
 bruno
 openjdk
+betterlockscreen
 ]
