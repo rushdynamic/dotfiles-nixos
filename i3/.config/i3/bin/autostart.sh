@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 picom --config ~/.config/picom/picom.conf &
 random_wall=$(find /home/rushdynamic/Pictures/Wallpapers/ -type f | shuf -n 1)
-wal -i $random_wall # use Pywal to generate color schemes based on wallpaper
+# use Pywal to generate color schemes based on wallpaper
+wal -i $random_wall # -f base16-ashes --- set predefined themes using the -f param2
 
 source /home/rushdynamic/Scripts/dotfiles-nixos/i3/.config/i3/bin/themer.sh /home/rushdynamic/.cache/wal/colors-mako # generate global color variables
 

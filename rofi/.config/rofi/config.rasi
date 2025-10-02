@@ -183,4 +183,4 @@ configuration {
 //@theme "/nix/store/8lhy719m39rpcyydvni8xjlvbc3di65h-rofi-1.7.5+wayland3/share/rofi/themes/material.rasi"
 //@theme "/nix/store/frw0hrn5gl0l87badrfgrz77i2idbmzn-rofi-1.7.5/share/rofi/themes/DarkBlue.rasi"
 //@theme "/nix/store/frw0hrn5gl0l87badrfgrz77i2idbmzn-rofi-1.7.5/share/rofi/themes/gruvbox-dark-hard.rasi"
-@theme "/nix/store/frw0hrn5gl0l87badrfgrz77i2idbmzn-rofi-1.7.5/share/rofi/themes/android_notification.rasi"
+@theme "/home/rushdynamic/.cache/wal/colors-rofi-dark.rasi"
