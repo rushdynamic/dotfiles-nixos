@@ -92,4 +92,7 @@ ncspot
 bruno
 openjdk
 betterlockscreen
+timewarrior
+spotify
+imagemagick
 ]
