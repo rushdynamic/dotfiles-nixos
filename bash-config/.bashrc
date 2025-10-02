@@ -13,3 +13,4 @@ git_branch() {
 
 export PS1='\[\e[01;33m\]\u\[\e[m\] [\[\e[36m\]\w\[\e[m\]]\[\033[01;31m\]$(git_branch)\[\e[m\] \[\e[01;33m\]➔ \[\e[m\]'
 export EDITOR='nvim'
+export PATH="$PATH:/home/rushdynamic/Scripts/dotfiles-nixos/misc"
