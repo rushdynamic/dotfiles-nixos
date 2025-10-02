@@ -1,0 +1,5 @@
+configuration {
+    show-icons: true;
+}
+
+@theme "applets/bgselector.rasi"
