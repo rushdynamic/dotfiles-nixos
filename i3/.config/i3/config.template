@@ -59,7 +59,7 @@ bindsym $mod+Shift+x                    exec xrandr --output eDP-1-1 --primary -
 bindsym $mod+Shift+y                    exec xrandr --output eDP-1-1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-0 --primary --mode 2560x1440 --pos 1920x0 --rotate normal &
 
 # -- Apps --
-bindsym $mod+Shift+f 			exec --no-startup-id thunar
+bindsym $mod+Shift+f 			exec --no-startup-id nautilus
 bindsym $mod+Shift+e 			exec --no-startup-id geany
 bindsym $mod+Shift+w 			exec --no-startup-id firefox
 bindsym $alt+Control+v 			exec --no-startup-id "alacritty --config-file ~/.config/i3/alacritty/alacritty.yml -e vim"
