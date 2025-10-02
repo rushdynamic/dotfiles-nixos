@@ -22,9 +22,9 @@ wall_selection=$(ls "$wall_dir" | while read -r A; do echo -en "$A\x00icon\x1f$c
 
 # Set wallpaper and update polybar color
 if [ -n "$wall_selection" ]; then
-    feh --bg-fill --no-fehbg "$wall_dir/$wall_selection" &
+	rm /tmp/i3_reloaded_once
+    /home/rushdynamic/.config/i3/bin/autostart.sh "$wall_dir/$wall_selection"
 	sleep 0.2
-#	colorwaybar "$wall_dir/$wall_selection"
 	exit 0
 else
 	exit 1
