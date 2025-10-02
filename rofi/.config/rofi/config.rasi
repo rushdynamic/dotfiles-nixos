@@ -83,7 +83,7 @@ configuration {
 
 	/*---------- Misc setting ----------*/
 	terminal: "alacritty";
-	font: "Mono 12";
+	font: "CaskaydiaCove NF 12";
 	sort: false;
 	threads: 0;
 	click-to-exit: true;
@@ -184,3 +184,13 @@ configuration {
 //@theme "/nix/store/frw0hrn5gl0l87badrfgrz77i2idbmzn-rofi-1.7.5/share/rofi/themes/DarkBlue.rasi"
 //@theme "/nix/store/frw0hrn5gl0l87badrfgrz77i2idbmzn-rofi-1.7.5/share/rofi/themes/gruvbox-dark-hard.rasi"
 @theme "/home/rushdynamic/.cache/wal/colors-rofi-dark.rasi"
+
+element {
+    spacing: 10px;   /* gap between icon and text */
+	padding: 4px 12px;
+}
+
+window {
+	width: 30%;
+	height: 30%;
+}
