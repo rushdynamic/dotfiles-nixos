@@ -32,11 +32,11 @@ gaps outer 0
 ##-- Colors ------------------------------
 
 # class                 border  backgr. text    indicator child_border
-client.focused            $I3_BG    $I3_BG #FFFFFF  $I3_BG      $I3_BG
-client.focused_inactive #414141 #414141 #1E222A $I3_BG   #414141
-client.unfocused        #2C3038 #2C3038 #FFFFFF $I3_BG   #2C3038
-client.urgent           #C678DD #C678DD #FFFFFF $I3_BG   #C678DD
-client.placeholder      #1E222A #1E222A #FFFFFF $I3_BG   #1E222A
+client.focused            $border_color    $border_color #FFFFFF  $border_color      $border_color
+client.focused_inactive #414141 #414141 #1E222A $border_color   #414141
+client.unfocused        #2C3038 #2C3038 #FFFFFF $border_color   #2C3038
+client.urgent           #C678DD #C678DD #FFFFFF $border_color   #C678DD
+client.placeholder      #1E222A #1E222A #FFFFFF $border_color   #1E222A
 
 client.background       #1E222A
 

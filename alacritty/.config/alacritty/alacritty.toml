@@ -29,7 +29,7 @@ save_to_clipboard = true
 
 [general]
 live_config_reload = true
-import = ["/home/rushdynamic/.config/alacritty/colorschemes/ashes-dark.toml", "/home/rushdynamic/.config/alacritty/fonts.toml"]
+import = ["/home/rushdynamic/.cache/wal/colors-alacritty.toml", "/home/rushdynamic/.config/alacritty/fonts.toml"]
 
 
 [[keyboard.bindings]]

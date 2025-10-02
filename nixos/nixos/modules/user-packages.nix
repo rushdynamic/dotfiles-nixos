@@ -95,4 +95,5 @@ betterlockscreen
 timewarrior
 spotify
 imagemagick
+pywal16
 ]

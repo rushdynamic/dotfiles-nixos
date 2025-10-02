@@ -1,17 +1,15 @@
 #!/usr/bin/env bash
+# Usage: source this_script.sh colors.conf
 
-wallpaper=$1
+CONF_FILE="$1"
 
-read -ra res <<< "$(/home/rushdynamic/Scripts/dotfiles-nixos/i3/.config/i3/bin/huegenics "$wallpaper")"
-export POLYBAR_BG="${res[0]}"
-export I3_BG="${res[1]}"
-export POLYBAR_ACCENT="${res[1]}"
-theme=${res[2]}
-if [ "$theme" = "dark" ]; then
-    export POLYBAR_FG="#fefefe"
-    export POLYBAR_COMP="#121212"
-else
-    export POLYBAR_FG="#121212"
-    export POLYBAR_COMP="#fefefe"
-fi
-# notify-send "Themer" "FG: $POLYBAR_FG, THEME: ${theme}"
+while IFS='=' read -r key value; do
+  # skip empty lines or comments
+  [[ -z "$key" || "$key" == \#* ]] && continue
+  
+  # turn dashes into underscores for valid variable names
+  varname=$(echo "$key" | tr '-' '_')
+  
+  # export the variable
+  export "$varname=$value"
+done < "$CONF_FILE"
