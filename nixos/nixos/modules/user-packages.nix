@@ -96,4 +96,5 @@ timewarrior
 spotify
 imagemagick
 pywal16
+zscroll
 ]
