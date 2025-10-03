@@ -7,7 +7,7 @@ wallpaper_path="${1:-$(find /home/rushdynamic/Pictures/Wallpapers/ -type f | shu
 # use Pywal to generate color schemes based on wallpaper
 wal -i $wallpaper_path # -f base16-ashes --- set predefined themes using the -f param2
 
-source /home/rushdynamic/Scripts/dotfiles-nixos/i3/.config/i3/bin/themer.sh /home/rushdynamic/.cache/wal/colors-mako # generate global color variables
+source /home/rushdynamic/Scripts/dotfiles-nixos/i3/bin/themer.sh /home/rushdynamic/.cache/wal/colors-mako # generate global color variables
 
 # generate i3 borders using global color variables
 FLAG_FILE="/tmp/i3_reloaded_once"
