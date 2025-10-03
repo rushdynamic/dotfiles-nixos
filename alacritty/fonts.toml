@@ -2,13 +2,13 @@
 size = 11.5
 
 [font.bold]
-family = "JetBrainsMono Nerd Font"
+family = "Adwaita Mono"
 
 [font.bold_italic]
-family = "JetBrainsMono Nerd Font"
+family = "Adwaita Mono"
 
 [font.italic]
-family = "JetBrainsMono Nerd Font"
+family = "Adwaita Mono"
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "Adwaita Mono"
