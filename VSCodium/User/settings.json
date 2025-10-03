@@ -1,0 +1,131 @@
+{
+	"security.workspace.trust.untrustedFiles": "open",
+	"editor.fontFamily": "JetBrainsMono Nerd Font",
+	"editor.fontLigatures": true,
+	"workbench.iconTheme": "material-icon-theme",
+	"todo-tree.tree.showScanModeButton": false,
+	"explorer.confirmDelete": false,
+	"todo-tree.general.tags": [
+		"BUG",
+		"HACK",
+		"FIXME",
+		"TODO",
+		"XXX",
+		"[ ]",
+		"[x]"
+	],
+	"todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+	"editor.cursorBlinking": "phase",
+	"editor.cursorStyle": "block",
+	"editor.maxTokenizationLineLength": 10000000000,
+	"editor.semanticTokenColorCustomizations": {
+		"[Tokyo City]": {
+			"enabled": true
+		}
+	},
+	"workbench.colorCustomizations": {
+		"[Solarized Light]": {
+			"editorCursor.foreground": "#E27A3F",
+			"editor.selectionBackground": "#91cdfc",
+			"editor.selectionHighlightBackground": "#baeef9",
+			"tab.activeBorderTop": "#E27A3F"
+		},
+		"[Tokyo City]": {
+			"editorCursor.foreground": "#E27A3F",
+			"editor.selectionBackground": "#135564",
+			"editor.selectionHighlightBackground": "#135564",
+			"tab.activeBorderTop": "#E27A3F",
+			"terminal.background": "#00000000",
+
+			// background when the mouse is over an item
+			"list.hoverBackground": "#3A3F58",
+			// text color when hovered
+			"list.hoverForeground": "#FFFFFF",
+
+			// when the item is actively selected (keyboard focus)
+			"list.activeSelectionBackground": "#2F344A",
+			"list.activeSelectionForeground": "#FFFFFF",
+
+			// optional: if you want same color when not focused
+			"list.inactiveSelectionBackground": "#2F344A",
+			"list.inactiveSelectionForeground": "#FFFFFF"
+		}
+	},
+	"calva.paredit.defaultKeyMap": "strict",
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"explorer.confirmDragAndDrop": false,
+	"redhat.telemetry.enabled": false,
+	"editor.formatOnSave": true,
+	"files.exclude": {
+		"**/.classpath": true,
+		"**/.project": true,
+		"**/.settings": true,
+		"**/.factorypath": true
+	},
+	"prettier.singleQuote": true,
+	"prettier.useTabs": true,
+	"calva.evaluationSendCodeToOutputWindow": true,
+	"editor.fontSize": 14,
+	"[clojure]": {
+		"editor.defaultFormatter": "betterthantomorrow.calva"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"terminal.integrated.macOptionIsMeta": true,
+	"editor.accessibilitySupport": "off",
+	"calva.prettyPrintingOptions": {
+		"printEngine": "pprint",
+		"enabled": true,
+		"width": 120,
+		"maxLength": 50
+	},
+	"editor.minimap.enabled": false,
+	"zenMode.hideLineNumbers": false,
+	"errorLens.removeLinebreaks": false,
+	"tailwindCSS.experimental.classRegex": [
+		":class\\s+\"([^\"]*)\"",
+		":[\\w-.#>]+\\.([\\w-]*)"
+	],
+	"tailwindCSS.includeLanguages": {
+		"clojure": "html"
+	},
+	"editor.quickSuggestions": {
+		"strings": true
+	},
+	"boot-java.rewrite.reconcile": true,
+	"window.zoomLevel": 1,
+	"workbench.activityBar.location": "top",
+	"workbench.settings.applyToAllProfiles": ["workbench.colorCustomizations"],
+	"workbench.startupEditor": "none",
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"workbench.editor.empty.hint": "hidden",
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"workbench.navigationControl.enabled": false,
+	"workbench.layoutControl.enabled": false,
+	"window.controlsStyle": "hidden",
+	"window.commandCenter": false,
+	"window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}",
+	"window.titleBarStyle": "native",
+	"java.jdt.ls.java.home": "/nix/store/k95pqfzyvrna93hc9a4cg5csl7l4fh0d-openjdk-21.0.7+6",
+	"spring-boot.ls.java.home": "/nix/store/k95pqfzyvrna93hc9a4cg5csl7l4fh0d-openjdk-21.0.7+6/bin/java",
+	"java.configuration.runtimes": [
+		{
+			"name": "JavaSE-21",
+			"path": "/nix/store/k95pqfzyvrna93hc9a4cg5csl7l4fh0d-openjdk-21.0.7+6/lib/openjdk",
+			"default": true
+		}
+	],
+	"workbench.colorTheme": "Ayu Mirage",
+	"terminal.integrated.gpuAcceleration": "off",
+	"window.menuBarVisibility": "toggle",
+	"git.openRepositoryInParentFolders": "always"
+}
