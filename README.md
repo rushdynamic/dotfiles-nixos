@@ -9,8 +9,8 @@ All config files and folders reside in this cloned repository.
 `stow` creates and manages the symlinks to these files and folders to their appropriate locations.
 
 Eg: Steps for adding dotfiles for `waybar` that resides in `~/.config/waybar` would be:
+- Move all the contents of `~/.config/waybar` to `./waybar/` (inside this cloned repo)
+- Run stow `stow -t ~/.config/waybar -S waybar -v`
 
-- Move `~/.config/waybar` to `./waybar/.config/waybar` (inside this cloned repo)
-- Run stow `stow -t ~ -S waybar -v`
-
-Note: need to specify the where the parent directory (in this case `~`) is supposed to be for the contents of our local waybar directory using `-t`.
+---
+GTK Font: TeX Gyre Heros Regular
