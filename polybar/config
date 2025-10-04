@@ -129,12 +129,18 @@ interval = 5
 ; New in version 3.7.0
 ; Default: false
 reverse-scroll = false
-format-volume-prefix = "  "
+ramp-volume-0 = " "
+ramp-volume-1 = " "
+ramp-volume-2 = " "
+; format-volume-prefix = "  "
 format-volume-prefix-foreground = ${colors.foreground}
-format-volume = <label-volume>
-label-muted = muted
-label-muted-foreground = ${colors.disabled}
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
 label-volume-foreground = ${colors.primary}
+format-muted-prefix = "  "
+format-muted-prefix-foreground = ${colors.foreground}
+label-muted = "Muted"
+label-muted-foreground = ${colors.disabled}
 click-right = alacritty -e pulsemixer
 
 
