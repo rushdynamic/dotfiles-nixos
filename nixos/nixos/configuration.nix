@@ -231,6 +231,8 @@ environment.systemPackages = import ./modules/user-packages.nix { inherit pkgs; 
   # networking.firewall.enable = false;
 
   virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "rushdynamic" ];
+  boot.blacklistedKernelModules = [ "kvm" "kvm_intel" "kvm_amd" ];
   # boot.kernelParams = [ "kvm.enable_virt_at_load=0" ]; # for virtualbox
 
 
