@@ -2,7 +2,7 @@
 	"security.workspace.trust.untrustedFiles": "open",
 	"editor.fontFamily": "JetBrainsMono Nerd Font",
 	"editor.fontLigatures": true,
-	"workbench.iconTheme": "material-icon-theme",
+	"workbench.iconTheme": "catppuccin-mocha",
 	"todo-tree.tree.showScanModeButton": false,
 	"explorer.confirmDelete": false,
 	"todo-tree.general.tags": [

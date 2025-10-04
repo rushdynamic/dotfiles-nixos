@@ -249,7 +249,7 @@ pseudo-transparency = true
 [bar/laptop]
 monitor = eDP-1-1
 width = 100%
-height = 20pt
+height = 22pt
 radius = 0
 modules-left = xworkspaces
 modules-center = xwindow

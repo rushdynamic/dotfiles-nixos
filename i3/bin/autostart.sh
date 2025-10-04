@@ -20,8 +20,20 @@ fi
 # if running from i3 (with no wallpaper arg), load all pkgs
 if [ -z "$1" ]; then
   picom --config ~/.config/picom/picom.conf &
-  xrandr --output eDP-1-1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-0 --primary --mode 2560x1440 --pos 1920x0 --rotate normal &
-  polybar --reload laptop -c ~/.config/polybar/config &
+  # xrandr --output eDP-1-1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-0 --primary --mode 2560x1440 --pos 1920x0 --rotate normal &
+  # Handle multi-monitor setup
+  if xrandr | grep -q "^HDMI-0 connected"; then
+    # External monitor connected
+    xrandr \
+        --output eDP-1-1 --mode 1920x1080 --pos 0x0 --rotate normal \
+        --output HDMI-0 --primary --mode 2560x1440 --pos 1920x0 --rotate normal
+    polybar --reload laptop -c ~/.config/polybar/config &
+else
+    # Laptop only
+    xrandr \
+        --output eDP-1-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal \
+        --output HDMI-0 --off
+fi
   # export POLYBAR_BG="#000000"
   polybar --reload external -c ~/.config/polybar/config &
   autotiling -w 1 2 3 4 &
