@@ -26,7 +26,7 @@ radius = 0
 
 ; dpi = 96
 
-background = ${colors.background}
+background = ${xrdb:background:#2f343f}
 foreground = ${colors.foreground}
 
 line-size = 3pt
