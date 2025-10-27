@@ -97,4 +97,7 @@ spotify
 imagemagick
 pywal16
 zscroll
+kodi
+jq
+flameshot
 ]
