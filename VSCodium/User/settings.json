@@ -127,5 +127,9 @@
 	"workbench.colorTheme": "Ayu Mirage",
 	"terminal.integrated.gpuAcceleration": "off",
 	"window.menuBarVisibility": "toggle",
-	"git.openRepositoryInParentFolders": "always"
+	"git.openRepositoryInParentFolders": "always",
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"window.customTitleBarVisibility": "never"
 }
