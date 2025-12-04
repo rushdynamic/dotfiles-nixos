@@ -100,4 +100,5 @@ zscroll
 kodi
 jq
 flameshot
+redshift
 ]
