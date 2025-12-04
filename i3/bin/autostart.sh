@@ -41,3 +41,5 @@ fi
 fi
 
 feh --bg-fill --no-fehbg $wallpaper_path &
+
+redshift &
