@@ -101,4 +101,6 @@ kodi
 jq
 flameshot
 redshift
+exiftool
+qbittorrent
 ]
