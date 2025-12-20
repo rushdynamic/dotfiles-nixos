@@ -206,6 +206,13 @@
     })
   ];
 
+  services.xserver.displayManager.sessionCommands = ''
+  xset s 300        # lock after 5 min
+  xset s noblank
+  xset +dpms
+  xset dpms 600 600 600 # power off screen after 10 min
+'';
+
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

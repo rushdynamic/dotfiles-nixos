@@ -319,3 +319,6 @@ workspace 9 output secondary
 # xrandr --output HDMI-1-0 --brightness 0.7[[]]
 # You can also use any non-zero value if you'd like to have a border
 # for_window [class=".*"] border pixel 3
+
+# Display timeouts
+exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen --lock # automatically lock after x seconds, x defined in nixos config

@@ -103,4 +103,8 @@ flameshot
 redshift
 exiftool
 qbittorrent
+calibre
+gemini-cli
+yt-dlp
+xss-lock
 ]
