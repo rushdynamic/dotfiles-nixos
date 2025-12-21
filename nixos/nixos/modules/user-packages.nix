@@ -107,4 +107,5 @@ calibre
 gemini-cli
 yt-dlp
 xss-lock
+caffeine-ng
 ]
