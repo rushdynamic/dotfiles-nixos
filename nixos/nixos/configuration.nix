@@ -127,6 +127,7 @@
     isNormalUser = true;
     description = "Rush Dynamic";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -196,6 +197,10 @@
   services.openssh.enable = true;
 
   services.resolved.enable = true;
+
+  # Use zshell
+  programs.zsh.enable = true;
+
 
   nixpkgs.overlays = [
     (self: super: {
