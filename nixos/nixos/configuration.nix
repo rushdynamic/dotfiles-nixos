@@ -218,6 +218,11 @@
   xset dpms 600 600 600 # power off screen after 10 min
 '';
 
+# Prevent mouse from turning off when idle
+services.udev.extraRules = ''
+  ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="1532", ATTR{idProduct}=="0094", ATTR{power/control}="on"
+'';
+
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
