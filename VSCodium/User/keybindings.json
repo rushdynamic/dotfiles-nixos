@@ -15,5 +15,18 @@
 		"command": "editor.action.revealDefinition"
 	},
 	{ "key": "ctrl+alt+left", "command": "workbench.action.navigateBack" },
-	{ "key": "ctrl+alt+right", "command": "workbench.action.navigateForward" }
+	{
+		"key": "ctrl+alt+right",
+		"command": "workbench.action.navigateForward"
+	},
+	{
+		"key": "alt+left",
+		"command": "editor.emmet.action.matchTag",
+		"when": "resourceExtname == .html || resourceExtname == .ts || resourceExtname == .tsx || resourceExtname == .js || resourceExtname == .jsx"
+	},
+	{
+		"key": "alt+right",
+		"command": "editor.emmet.action.matchTag",
+		"when": "resourceExtname == .html || resourceExtname == .ts || resourceExtname == .tsx || resourceExtname == .js || resourceExtname == .jsx"
+	}
 ]
