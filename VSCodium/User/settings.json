@@ -126,7 +126,7 @@
 	],
 	"workbench.colorTheme": "Ayu Mirage",
 	"terminal.integrated.gpuAcceleration": "off",
-	"window.menuBarVisibility": "toggle",
+	"window.menuBarVisibility": "hidden", // change this to toggle for enabling `Alt`
 	"git.openRepositoryInParentFolders": "always",
 	"[json]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
