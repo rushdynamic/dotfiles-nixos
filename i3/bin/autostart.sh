@@ -42,5 +42,7 @@ fi
 
 feh --bg-fill --no-fehbg $wallpaper_path &
 
-redshift &
-caffeine &
+nohup redshift > redshift-output.log 2>&1 &
+nohup caffeine > caffeine-output.log 2>&1 &
+nohup stretchly > stretchly-output.log 2>&1 &
+nohup flameshot > flameshot-output.log 2>&1 &
