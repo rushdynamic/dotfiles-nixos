@@ -134,5 +134,11 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "window.customTitleBarVisibility": "never"
+  "window.customTitleBarVisibility": "never",
+  "geminicodeassist.project": "tidal-minutia-sw9k9",
+  "diffEditor.codeLens": true,
+  "geminicodeassist.customCommands": {
+    "disable-gemini": "Stop suggestions"
+  },
+  "geminicodeassist.inlineSuggestions.enableAuto": false
 }
