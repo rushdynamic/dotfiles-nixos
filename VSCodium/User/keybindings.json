@@ -1,32 +1,42 @@
 // Place your key bindings in this file to override the defaults
 [
-	{
-		"key": "ctrl+n",
-		"command": "explorer.newFile",
-		"when": "explorerViewletFocus"
-	},
-	{
-		"key": "ctrl+shift+n",
-		"command": "explorer.newFolder",
-		"when": "explorerViewletFocus"
-	},
-	{
-		"key": "ctrl+enter",
-		"command": "editor.action.revealDefinition"
-	},
-	{ "key": "ctrl+alt+left", "command": "workbench.action.navigateBack" },
-	{
-		"key": "ctrl+alt+right",
-		"command": "workbench.action.navigateForward"
-	},
-	{
-		"key": "alt+left",
-		"command": "editor.emmet.action.matchTag",
-		"when": "resourceExtname == .html || resourceExtname == .ts || resourceExtname == .tsx || resourceExtname == .js || resourceExtname == .jsx"
-	},
-	{
-		"key": "alt+right",
-		"command": "editor.emmet.action.matchTag",
-		"when": "resourceExtname == .html || resourceExtname == .ts || resourceExtname == .tsx || resourceExtname == .js || resourceExtname == .jsx"
-	}
+  {
+    "key": "ctrl+n",
+    "command": "explorer.newFile",
+    "when": "explorerViewletFocus"
+  },
+  {
+    "key": "ctrl+shift+n",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletFocus"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "editor.action.revealDefinition"
+  },
+  { "key": "ctrl+alt+left", "command": "workbench.action.navigateBack" },
+  {
+    "key": "ctrl+alt+right",
+    "command": "workbench.action.navigateForward"
+  },
+  {
+    "key": "alt+left",
+    "command": "editor.emmet.action.matchTag",
+    "when": "resourceExtname == .html || resourceExtname == .ts || resourceExtname == .tsx || resourceExtname == .js || resourceExtname == .jsx"
+  },
+  {
+    "key": "alt+right",
+    "command": "editor.emmet.action.matchTag",
+    "when": "resourceExtname == .html || resourceExtname == .ts || resourceExtname == .tsx || resourceExtname == .js || resourceExtname == .jsx"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "workbench.view.extension.geminiChat",
+    "when": "viewContainer.workbench.view.extension.geminiChat.enabled && !runningOnCloudShell"
+  },
+  {
+    "key": "alt+g",
+    "command": "-workbench.view.extension.geminiChat",
+    "when": "viewContainer.workbench.view.extension.geminiChat.enabled && !runningOnCloudShell"
+  }
 ]
