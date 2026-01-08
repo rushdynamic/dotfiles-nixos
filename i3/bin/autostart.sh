@@ -28,12 +28,12 @@ if [ -z "$1" ]; then
         --output eDP-1-1 --mode 1920x1080 --pos 0x0 --rotate normal \
         --output HDMI-0 --primary --mode 2560x1440 --pos 1920x0 --rotate normal
     polybar --reload laptop -c ~/.config/polybar/config &
-else
+	else
     # Laptop only
     xrandr \
         --output eDP-1-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal \
         --output HDMI-0 --off
-fi
+	fi
   # export POLYBAR_BG="#000000"
   polybar --reload external -c ~/.config/polybar/config &
   autotiling -w 1 2 3 4 &
@@ -42,7 +42,9 @@ fi
 
 feh --bg-fill --no-fehbg $wallpaper_path &
 
-nohup redshift > redshift-output.log 2>&1 &
+if ! pgrep -f "bin/redshift" > /dev/null; then
+	nohup redshift > redshift-output.log 2>&1 &
+fi
 nohup caffeine > caffeine-output.log 2>&1 &
 nohup stretchly > stretchly-output.log 2>&1 &
 nohup flameshot > flameshot-output.log 2>&1 &
