@@ -109,4 +109,7 @@ yt-dlp
 xss-lock
 caffeine-ng
 docker
+dbeaver-bin
+bruno
+maven
 ]
