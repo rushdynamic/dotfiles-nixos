@@ -13,7 +13,7 @@ WINIT_X11_SCALE_FACTOR = "1.1"
 [window]
 decorations = "full"
 dynamic_title = true
-opacity = 0.85
+opacity = 0.92
 startup_mode = "Windowed"
 
 [window.dimensions]
