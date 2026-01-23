@@ -43,8 +43,8 @@ fi
 feh --bg-fill --no-fehbg $wallpaper_path &
 
 if ! pgrep -f "bin/redshift" > /dev/null; then
-	nohup redshift > redshift-output.log 2>&1 &
+	nohup redshift > /var/log/redshift-output.log 2>&1 &
 fi
-nohup caffeine > caffeine-output.log 2>&1 &
-nohup stretchly > stretchly-output.log 2>&1 &
-nohup flameshot > flameshot-output.log 2>&1 &
+nohup caffeine > /var/log/caffeine-output.log 2>&1 &
+nohup stretchly > /var/log/stretchly-output.log 2>&1 &
+nohup flameshot > /var/log/flameshot-output.log 2>&1 &
