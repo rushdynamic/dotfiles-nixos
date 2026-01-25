@@ -112,4 +112,5 @@ docker
 dbeaver-bin
 bruno
 maven
+lazygit
 ]

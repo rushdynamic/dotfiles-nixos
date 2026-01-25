@@ -111,4 +111,5 @@ caffeine-ng
 docker
 dbeaver-bin
 bruno
+maven
 ]
