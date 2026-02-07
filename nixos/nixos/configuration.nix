@@ -199,14 +199,17 @@ xdg.portal = {
    programs.mtr.enable = true;
    programs.gnupg.agent = {
      enable = true;
-     enableSSHSupport = true;
+     enableSSHSupport = false;
    };
 
   # List services that you want to enable
   programs.ssh = {
     enableAskPassword = true;
-    askPassword = "${pkgs.lxqt.lxqt-openssh-askpass}/bin/lxqt-openssh-askpass";
+    askPassword = "${pkgs.kdePackages.ksshaskpass}/bin/ksshaskpass";
   };
+
+	services.gnome.gnome-keyring.enable = true;
+	security.pam.services.gdm.enableGnomeKeyring = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;

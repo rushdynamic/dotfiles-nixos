@@ -27,9 +27,6 @@ with pkgs; [
   xfce.thunar
   aria2
   unzip
-  (polybar.override {
-    pulseSupport = true;
-  })
   obs-studio
   autotiling
   lxappearance
@@ -112,4 +109,6 @@ dbeaver-bin
 bruno
 maven
 lazygit
+waybar
+kdePackages.ksshaskpass
 ]
