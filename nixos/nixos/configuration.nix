@@ -58,30 +58,34 @@
   };
 
   # Default session selection
-  services.displayManager.defaultSession = "none+i3";
+  services.displayManager.defaultSession = "hyprland";
 
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  # services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   
-  programs.hyprland.enable = false;
 
   # enabling i3-gaps
   environment.pathsToLink = [ "/libexec" ];
   services.xserver.desktopManager.xterm.enable = false;
-  services.xserver.windowManager.i3 = {
-    enable = true;
-    package = pkgs.i3-gaps;
-    extraPackages = with pkgs; [
-      dmenu
-      i3status
-      i3lock
-    ];
-  };
+
+# Enable Hyprland
+programs.hyprland = {
+  enable = true;
+  # NVIDIA-specific fixes for Hyprland are now largely handled by the module,
+  # but xwayland is usually needed for older apps
+  xwayland.enable = true; 
+};
+
+# XDG Portals are required for screen sharing and file pickers on Wayland
+xdg.portal = {
+  enable = true;
+  extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+};
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -145,13 +149,19 @@
   nixpkgs.config.allowUnfree = true;
   
   environment.sessionVariables = {
-	LIBVA_DRIVER_NAME = "nvidia";
-	__GLX_VENDOR_LIBRARY_NAME = "nvidia";
-	NVD_BACKEND = "direct";
-	__NV_PRIME_RENDER_OFFLOAD = "1";
-	__NV_PRIME_RENDER_OFFLOAD_PROVIDER = "NVIDIA-G0";
-	__VK_LAYER_NV_optimus = "NVIDIA_only";
-	GBM_BACKEND = "nvidia";
+# NVIDIA specific
+  LIBVA_DRIVER_NAME = "nvidia";
+  __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+  GBM_BACKEND = "nvidia"; # Keep this FOR WAYLAND (it breaks X11, but is required here)
+  
+  # Tell apps to use Wayland
+  NIXOS_OZONE_WL = "1"; # Forces Chromium/Electron apps to use Wayland
+  XDG_CURRENT_DESKTOP = "Hyprland";
+  XDG_SESSION_TYPE = "wayland";
+  XDG_SESSION_DESKTOP = "Hyprland";
+  
+  # Optional: Fix flickering in some Electron apps
+  ELECTRON_OZONE_PLATFORM_HINT = "auto";
   JAVA_HOME = "${pkgs.openjdk}";
   };
 

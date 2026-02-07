@@ -58,7 +58,6 @@ with pkgs; [
   playerctl
   simplescreenrecorder
   typescript
-  stremio
   pfetch
   kdePackages.kdeconnect-kde
   parted
@@ -71,7 +70,7 @@ with pkgs; [
   gnome-themes-extra
   bitwarden-cli
   llm
-  python3Full
+  python3
   gimp-with-plugins
   chromium
   gpu-screen-recorder-gtk
