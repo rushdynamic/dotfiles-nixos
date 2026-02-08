@@ -6,7 +6,9 @@ with pkgs; [
   vlc
   #  wget
   kitty
-  brave
+  (brave.override {
+    commandLineArgs = "--ozone-platform=x11";
+  })
   git
   git-credential-manager
   libsecret
@@ -111,4 +113,6 @@ maven
 lazygit
 waybar
 kdePackages.ksshaskpass
+hyprpaper
+waypaper
 ]

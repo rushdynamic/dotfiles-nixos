@@ -152,16 +152,13 @@ xdg.portal = {
 # NVIDIA specific
   LIBVA_DRIVER_NAME = "nvidia";
   __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-  GBM_BACKEND = "nvidia"; # Keep this FOR WAYLAND (it breaks X11, but is required here)
   
-  # Tell apps to use Wayland
-  NIXOS_OZONE_WL = "1"; # Forces Chromium/Electron apps to use Wayland
   XDG_CURRENT_DESKTOP = "Hyprland";
   XDG_SESSION_TYPE = "wayland";
   XDG_SESSION_DESKTOP = "Hyprland";
   
   # Optional: Fix flickering in some Electron apps
-  ELECTRON_OZONE_PLATFORM_HINT = "auto";
+  ELECTRON_OZONE_PLATFORM = "x11";
   JAVA_HOME = "${pkgs.openjdk}";
   };
 
@@ -268,7 +265,7 @@ environment.systemPackages = import ./modules/user-packages.nix { inherit pkgs; 
   virtualisation.virtualbox.host.enable = true;
 	virtualisation.docker.enable = true;
   users.extraGroups.vboxusers.members = [ "rushdynamic" ];
-  boot.blacklistedKernelModules = [ "kvm" "kvm_intel" "kvm_amd" ];
+  # boot.blacklistedKernelModules = [ "kvm" "kvm_intel" "kvm_amd" ];
   # boot.kernelParams = [ "kvm.enable_virt_at_load=0" ]; # for virtualbox
 
 
