@@ -113,6 +113,7 @@ maven
 lazygit
 waybar
 kdePackages.ksshaskpass
+gnome-keyring
 hyprpaper
 waypaper
 ]

@@ -205,7 +205,7 @@ xdg.portal = {
     askPassword = "${pkgs.kdePackages.ksshaskpass}/bin/ksshaskpass";
   };
 
-	services.gnome.gnome-keyring.enable = true;
+	services.gnome.gnome-keyring.enable = lib.mkForce false; # enabled via Hyprland with the `components` param instead
 	security.pam.services.gdm.enableGnomeKeyring = true;
 
   # Enable the OpenSSH daemon.
