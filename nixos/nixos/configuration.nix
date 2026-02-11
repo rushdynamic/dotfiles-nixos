@@ -189,8 +189,17 @@
    programs.mtr.enable = true;
    programs.gnupg.agent = {
      enable = true;
-     enableSSHSupport = true;
    };
+
+	services.gnome.gcr-ssh-agent.enable = false;
+	programs.ssh = {
+		startAgent = true;
+		extraConfig = ''
+			Host github.com
+				IdentityFile /home/rushdynamic/.ssh/github-ssh-key
+				AddKeysToAgent yes
+		'';
+	};
 
   # List services that you want to enable
   programs.ssh = {
