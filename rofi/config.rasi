@@ -83,7 +83,7 @@ configuration {
 
 	/*---------- Misc setting ----------*/
 	terminal: "alacritty";
-	font: "CaskaydiaCove NF 12";
+	font: "AdwaitaMono Nerd Font, Bold 14";
 	sort: false;
 	threads: 0;
 	click-to-exit: true;

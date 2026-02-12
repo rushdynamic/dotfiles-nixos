@@ -176,6 +176,7 @@
     x = "xclip -selection clipboard";
     nmt = "/home/rushdynamic/Scripts/dotfiles-nixos/misc/nmtui-wrapper.sh";
     declair = "bb /home/rushdynamic/Scripts/dotfiles-nixos/misc/declair.clj";
+		wallpicker = "/home/rushdynamic/Scripts/dotfiles-nixos/misc/wallpicker/wallpicker";
   };
 
   programs.git = {

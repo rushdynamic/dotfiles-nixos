@@ -1,5 +1,4 @@
-pactl unload-module module-null-sink
-killall polybar
-killall picom
-rm /tmp/i3_reloaded_once
+#!/usr/bin/env bash
+
+./kill.sh
 i3 restart

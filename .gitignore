@@ -1,4 +1,4 @@
 .lsp/
 .clj-kondo/
-i3/config
 polybar/.config/polybar/colors.ini
+i3/bin/nohup.out
