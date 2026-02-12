@@ -9,14 +9,6 @@ wal -i $wallpaper_path # -f base16-ashes --- set predefined themes using the -f 
 
 source /home/rushdynamic/Scripts/dotfiles-nixos/i3/bin/themer.sh /home/rushdynamic/.cache/wal/colors-mako # generate global color variables
 
-# generate i3 borders using global color variables
-FLAG_FILE="/tmp/i3_reloaded_once"
-if [ ! -f "$FLAG_FILE" ]; then
-  sed "s|\$border_color|$border_color|g" ~/.config/i3/config.template > ~/.config/i3/config
-  touch "$FLAG_FILE"
-  i3-msg reload
-fi
-
 # if running from i3 (with no wallpaper arg), load all pkgs
 if [ -z "$1" ]; then
   picom --config ~/.config/picom/picom.conf &
