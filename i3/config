@@ -6,7 +6,7 @@ set $mod Mod4
 set $alt Mod1
 
 ##-- Fonts (Global) ----------------------
-font pango:JetBrains Mono Medium 10
+font pango:TeX Gyre Heros Medium 10
 
 ##-- Gaps --------------------------------
 
@@ -18,6 +18,7 @@ title_align left
 
 # Uncomment this to disable title bars
 for_window [class=".*"] border pixel 1
+for_window [class=".*"] title_format " %title"
 
 # Gaps (Outer gaps are added to the inner gaps)
 gaps inner 15
