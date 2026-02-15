@@ -51,26 +51,21 @@ exec_always --no-startup-id 	~/.config/i3/bin/autostart.sh
 ##-- Key Bindings ------------------------
 
 # -- Terminal --
-bindsym $mod+Return 			exec --no-startup-id ~/.config/i3/bin/i3term.sh
-bindsym $mod+Shift+Return 		exec --no-startup-id ~/.config/i3/bin/i3term.sh --float
 bindsym $mod+t 				exec --no-startup-id alacritty
 bindsym $mod+Shift+t 			exec --no-startup-id alacritty --working-directory "$(readlink -e /proc/"$(pgrep -P "$(xdo pid)" | head -n 1)"/cwd)"
 
-# Single monitor
+# Single monitor -- FIXME
 bindsym $mod+Shift+x                    exec xrandr --output eDP-1-1 --primary --mode 1920x1080 --pos 0x0
 
-# Dual monitor
+# Dual monitor -- FIXME
 bindsym $mod+Shift+y                    exec xrandr --output eDP-1-1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-0 --primary --mode 2560x1440 --pos 1920x0 --rotate normal &
 
 # -- Apps --
 bindsym $mod+Shift+f 			exec --no-startup-id nautilus
 bindsym $mod+Shift+e 			exec --no-startup-id geany
 bindsym $mod+Shift+w 			exec --no-startup-id firefox
-bindsym $alt+Control+v 			exec --no-startup-id "alacritty --config-file ~/.config/i3/alacritty/alacritty.yml -e vim"
-bindsym $alt+Control+n 			exec --no-startup-id "alacritty --config-file ~/.config/i3/alacritty/alacritty.yml -e nvim"
-bindsym $alt+Control+r 			exec --no-startup-id "alacritty --config-file ~/.config/i3/alacritty/alacritty.yml -e ranger"
-bindsym $alt+Control+h 			exec --no-startup-id "alacritty --config-file ~/.config/i3/alacritty/alacritty.yml -e htop"
-bindsym $alt+Control+b 			exec --no-startup-id "alacritty --config-file ~/.config/i3/alacritty/alacritty.yml -e bashtop"
+bindsym $alt+Control+r 			exec --no-startup-id "alacritty -e ranger"
+bindsym $alt+Control+h 			exec --no-startup-id "alacritty -e htop"
 
 # -- Rofi --
 bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
@@ -81,6 +76,7 @@ bindsym $mod+Shift+S 				exec --no-startup-id ~/.config/i3/rofi/bin/screenshot
 bindsym $mod+r 					exec --no-startup-id ~/.config/i3/rofi/bin/asroot
 bindsym $alt+Shift+w 				exec --no-startup-id ~/.config/i3/rofi/bin/windows
 bindsym $mod+Tab 				exec rofi -show window
+bindsym $alt+F2					exec --no-startup-id xdotool getactivewindow set_window --name "$(rofi -dmenu -p 'New Title')"
 
 # -- Function keys --
 bindsym XF86MonBrightnessUp 	exec --no-startup-id "brightness --inc"
