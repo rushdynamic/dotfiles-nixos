@@ -113,4 +113,6 @@ dbeaver-bin
 bruno
 maven
 lazygit
+antigravity
+amberol
 ]

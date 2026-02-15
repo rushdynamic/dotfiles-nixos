@@ -238,6 +238,7 @@ services.udev.extraRules = ''
   # List packages installed in system profile. To search, run:
   # $ nix search wget
 environment.systemPackages = import ./modules/user-packages.nix { inherit pkgs; };
+services.flatpak.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
