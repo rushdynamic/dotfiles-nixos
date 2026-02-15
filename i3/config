@@ -32,13 +32,15 @@ gaps outer 0
 
 ##-- Colors ------------------------------
 
-set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $fg #FFFFFF
 set_from_resource $bg i3wm.color2 #f0f0f0
+set_from_resource $fg2 i3wm.color6 #FFFFFF
+set_from_resource $bg2 i3wm.color1 #2C3038
 
 # class                 border  backgr. text    indicator child_border
-client.focused            $bg    $bg $fg $bg      $bg
+client.focused            $bg    $bg 		#FFFFFF 			$bg      $bg
 client.focused_inactive #414141 #414141 #1E222A #6A6F93   #414141
-client.unfocused        #2C3038 #2C3038 #FFFFFF #6A6F93   #2C3038
+client.unfocused        $bg2 		$bg2 		#212121 			$bg2   $bg2
 client.urgent           #C678DD #C678DD #FFFFFF #6A6F93   #C678DD
 client.placeholder      #1E222A #1E222A #FFFFFF #6A6F93   #1E222A
 
@@ -76,7 +78,7 @@ bindsym $mod+Shift+S 				exec --no-startup-id ~/.config/i3/rofi/bin/screenshot
 bindsym $mod+r 					exec --no-startup-id ~/.config/i3/rofi/bin/asroot
 bindsym $alt+Shift+w 				exec --no-startup-id ~/.config/i3/rofi/bin/windows
 bindsym $mod+Tab 				exec rofi -show window
-bindsym $alt+F2					exec --no-startup-id xdotool getactivewindow set_window --name "$(rofi -dmenu -p 'New Title')"
+bindsym $alt+F2					exec --no-startup-id xdotool getactivewindow set_window --name "$(rofi -dmenu -p 'New Title')" # rename active window
 
 # -- Function keys --
 bindsym XF86MonBrightnessUp 	exec --no-startup-id "brightness --inc"

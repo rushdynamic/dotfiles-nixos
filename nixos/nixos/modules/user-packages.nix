@@ -115,4 +115,5 @@ maven
 lazygit
 antigravity
 amberol
+xdotool
 ]
