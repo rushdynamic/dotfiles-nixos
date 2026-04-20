@@ -12,7 +12,7 @@
     "TODO",
     "XXX",
     "[ ]",
-    "[x]"
+    "[x]",
   ],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
   "editor.cursorBlinking": "phase",
@@ -20,8 +20,8 @@
   "editor.maxTokenizationLineLength": 10000000000,
   "editor.semanticTokenColorCustomizations": {
     "[Tokyo City]": {
-      "enabled": true
-    }
+      "enabled": true,
+    },
   },
   "editor.tabSize": 2,
   "editor.insertSpaces": false,
@@ -31,7 +31,7 @@
       "editorCursor.foreground": "#E27A3F",
       "editor.selectionBackground": "#91cdfc",
       "editor.selectionHighlightBackground": "#baeef9",
-      "tab.activeBorderTop": "#E27A3F"
+      "tab.activeBorderTop": "#E27A3F",
     },
     "[Tokyo City]": {
       "editorCursor.foreground": "#E27A3F",
@@ -51,8 +51,8 @@
 
       // optional: if you want same color when not focused
       "list.inactiveSelectionBackground": "#2F344A",
-      "list.inactiveSelectionForeground": "#FFFFFF"
-    }
+      "list.inactiveSelectionForeground": "#FFFFFF",
+    },
   },
   "calva.paredit.defaultKeyMap": "strict",
   "javascript.updateImportsOnFileMove.enabled": "always",
@@ -63,23 +63,23 @@
     "**/.classpath": true,
     "**/.project": true,
     "**/.settings": true,
-    "**/.factorypath": true
+    "**/.factorypath": true,
   },
   "prettier.singleQuote": true,
   "prettier.useTabs": false,
   "calva.evaluationSendCodeToOutputWindow": true,
   "editor.fontSize": 14,
   "[clojure]": {
-    "editor.defaultFormatter": "betterthantomorrow.calva"
+    "editor.defaultFormatter": "betterthantomorrow.calva",
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "terminal.integrated.macOptionIsMeta": true,
   "editor.accessibilitySupport": "off",
@@ -87,20 +87,20 @@
     "printEngine": "pprint",
     "enabled": true,
     "width": 120,
-    "maxLength": 50
+    "maxLength": 50,
   },
   "editor.minimap.enabled": false,
   "zenMode.hideLineNumbers": false,
   "errorLens.removeLinebreaks": false,
   "tailwindCSS.experimental.classRegex": [
     ":class\\s+\"([^\"]*)\"",
-    ":[\\w-.#>]+\\.([\\w-]*)"
+    ":[\\w-.#>]+\\.([\\w-]*)",
   ],
   "tailwindCSS.includeLanguages": {
-    "clojure": "html"
+    "clojure": "html",
   },
   "editor.quickSuggestions": {
-    "strings": true
+    "strings": true,
   },
   "boot-java.rewrite.reconcile": true,
   "window.zoomLevel": 1,
@@ -110,7 +110,7 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "workbench.editor.empty.hint": "hidden",
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "workbench.navigationControl.enabled": false,
   "workbench.layoutControl.enabled": false,
@@ -124,21 +124,25 @@
     {
       "name": "JavaSE-21",
       "path": "/nix/store/k95pqfzyvrna93hc9a4cg5csl7l4fh0d-openjdk-21.0.7+6/lib/openjdk",
-      "default": true
-    }
+      "default": true,
+    },
   ],
-  "workbench.colorTheme": "Ayu Mirage",
-  "terminal.integrated.gpuAcceleration": "off",
-  "window.menuBarVisibility": "hidden", // change this to toggle for enabling `Alt`
+  "workbench.colorTheme": "Solarized Light",
+  "terminal.integrated.gpuAcceleration": "off", // change this to toggle for enabling `Alt`
   "git.openRepositoryInParentFolders": "always",
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "window.customTitleBarVisibility": "never",
   "geminicodeassist.project": "tidal-minutia-sw9k9",
   "diffEditor.codeLens": true,
   "geminicodeassist.customCommands": {
-    "disable-gemini": "Stop suggestions"
+    "disable-gemini": "Stop suggestions",
   },
-  "geminicodeassist.inlineSuggestions.enableAuto": false
+  "geminicodeassist.inlineSuggestions.enableAuto": false,
+  "java.autobuild.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "always",
+  },
+  "window.menuBarVisibility": "hidden",
 }

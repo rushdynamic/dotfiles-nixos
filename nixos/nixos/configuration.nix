@@ -35,9 +35,16 @@
   networking.networkmanager.enable = true;
 
 	networking.firewall = {
-  	allowedTCPPorts = [ 8081 ];
-  	allowedUDPPorts = [ 8081 ];
+  	allowedTCPPorts = [ 8081 8080 ];
+  	allowedUDPPorts = [ 8081 8080 ];
 	};
+	
+	programs.adb.enable=true;
+
+	users.users.me = {
+    isNormalUser = true;
+    extraGroups = [ "adbusers" ];
+  };
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";

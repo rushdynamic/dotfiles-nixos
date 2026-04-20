@@ -113,7 +113,11 @@ dbeaver-bin
 bruno
 maven
 lazygit
-antigravity
+unstable.antigravity
 amberol
 xdotool
+localsend
+python315
+android-studio
+android-tools
 ]
