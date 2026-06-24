@@ -127,13 +127,12 @@
       "default": true,
     },
   ],
-  "workbench.colorTheme": "Solarized Light",
+  "workbench.colorTheme": "Tokyo City Darker",
   "terminal.integrated.gpuAcceleration": "off", // change this to toggle for enabling `Alt`
   "git.openRepositoryInParentFolders": "always",
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-  },
-  "window.customTitleBarVisibility": "never",
+	},
   "geminicodeassist.project": "tidal-minutia-sw9k9",
   "diffEditor.codeLens": true,
   "geminicodeassist.customCommands": {
@@ -145,4 +144,5 @@
     "source.organizeImports": "always",
   },
   "window.menuBarVisibility": "hidden",
+	"window.customTitleBarVisibility": "never"
 }

@@ -16,3 +16,7 @@ export PATH="$PATH:/home/rushdynamic/Scripts/dotfiles-nixos/misc"
 
 setopt PROMPT_SUBST
 export PS1='%B%F{yellow}%n%f%b [%F{cyan}%~%f]%B%F{red}$(git_branch)%f%b %B%F{yellow}➔ %f%b'
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/rushdynamic/.lmstudio/bin"
+# End of LM Studio CLI section
+
