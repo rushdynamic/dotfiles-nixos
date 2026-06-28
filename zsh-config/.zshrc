@@ -20,3 +20,5 @@ export PS1='%B%F{yellow}%n%f%b [%F{cyan}%~%f]%B%F{red}$(git_branch)%f%b %B%F{yel
 export PATH="$PATH:/home/rushdynamic/.lmstudio/bin"
 # End of LM Studio CLI section
 
+# Used for Pi installed via NPM with `npm set prefix ~/.local/lib`
+export PATH="$HOME/.local/lib/bin:$PATH"
