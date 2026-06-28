@@ -2,3 +2,4 @@
 .clj-kondo/
 polybar/.config/polybar/colors.ini
 i3/bin/nohup.out
+noctalia/colors.json
