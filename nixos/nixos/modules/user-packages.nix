@@ -18,4 +18,8 @@ mako
 noctalia-shell
 rofi
 rose-pine-hyprcursor
+lmstudio
+unzip
+nodejs
+htop
 ]
