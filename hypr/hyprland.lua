@@ -446,3 +446,13 @@ hl.window_rule({
     float = true,
 })
 
+-- Force Brave to open on workspace 3
+hl.window_rule({
+    match = { class = "brave-browser" },
+    workspace = "3"
+})
+
+hl.window_rule({
+    match = { class = "codium" },
+    workspace = "1"
+})
