@@ -300,7 +300,7 @@ hl.bind("CTRL + Print", hl.dsp.exec_cmd("takeshot --win"))
 hl.bind(mainMod .. " + CTRL + Print", hl.dsp.exec_cmd("takeshot --area"))
 
 -- -- Session Controls --
-hl.bind(altMod .. " + CTRL + L", hl.dsp.exec_cmd("betterlockscreen --lock"))
+hl.bind(altMod .. " + CTRL + L", hl.dsp.exec_cmd("noctalia-shell ipc call lockScreen lock")) -- FIXME: this will need to be modified post upgrade to Noctalia v5.
 hl.bind(mainMod .. " + SHIFT + Z", hl.dsp.exec_cmd("systemctl suspend"))
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
 hl.bind("CTRL + SHIFT + Q", hl.dsp.exit())
