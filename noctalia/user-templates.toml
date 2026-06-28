@@ -1,0 +1,3 @@
+[templates.hyprland_lua]
+input_path = "~/.config/noctalia/templates/hyprland-colors.lua"
+output_path = "~/.config/hypr/noctalia-colors.lua"
