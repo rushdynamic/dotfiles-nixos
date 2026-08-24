@@ -91,7 +91,7 @@
     isNormalUser = true;
     description = "Rush Dynamic";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -146,6 +146,9 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+
+	virtualisation.docker.enable = true;
+
 
   # List services that you want to enable:
 

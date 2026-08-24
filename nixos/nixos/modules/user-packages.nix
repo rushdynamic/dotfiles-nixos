@@ -22,4 +22,7 @@ lmstudio
 unzip
 nodejs
 htop
+ghostty
+hypridle
+docker
 ]
