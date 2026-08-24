@@ -22,3 +22,4 @@ export PATH="$PATH:/home/rushdynamic/.lmstudio/bin"
 
 # Used for Pi installed via NPM with `npm set prefix ~/.local/lib`
 export PATH="$HOME/.local/lib/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"

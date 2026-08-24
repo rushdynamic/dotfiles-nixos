@@ -25,4 +25,6 @@ htop
 ghostty
 hypridle
 docker
+spotify
+antigravity
 ]
