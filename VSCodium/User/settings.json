@@ -131,7 +131,7 @@
   "terminal.integrated.gpuAcceleration": "off", // change this to toggle for enabling `Alt`
   "git.openRepositoryInParentFolders": "always",
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "vscode.json-language-features",
 	},
   "geminicodeassist.project": "tidal-minutia-sw9k9",
   "diffEditor.codeLens": true,
